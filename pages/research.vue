@@ -42,6 +42,10 @@ export default {
 .publication {
   border-bottom: 2px solid white;
   padding: 3vw 0;
+
+  @media all and (max-width: 768px) {
+    padding: 6vw 0;
+  }
 }
 
 .container {
@@ -60,6 +64,10 @@ export default {
 
 .copy {
   padding-right: 10vw;
+
+  @media all and (max-width: 768px) {
+    padding-right: 0;
+  }
 }
 
 .external {
@@ -71,6 +79,11 @@ export default {
   border: 2px solid white;
   margin-top: 2vw;
   transition: all 0.3s ease-out;
+
+  @media all and (max-width: 768px) {
+    padding: 3vw 6vw;
+    margin-top: 6vw;
+  }
 
   &,
   &:visited {

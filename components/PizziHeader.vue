@@ -5,10 +5,10 @@
     </div>
     <div class="row">
       <nav>
-        <nuxt-link to="/">home</nuxt-link>
-        <nuxt-link to="/research">research</nuxt-link>
+        <nuxt-link :class="{ active: $route.path === '/' }" to="/">home</nuxt-link>
+        <nuxt-link :class="{ active: $route.path === '/research' }" to="/research">research</nuxt-link>
         <a href="https://mega.nz/file/IGZQzIYL#rc3yMQ1dcYHXTiXk4UZe9oHcSKXTcPs3iBW5dUrhoIc" target="_blank">cv</a>
-        <nuxt-link to="/teaching">teaching</nuxt-link>
+        <nuxt-link :class="{ active: $route.path === '/teaching' }" to="/teaching">teaching</nuxt-link>
       </nav>
       <a href="mailto:alessandro.pizzigolotto@nhh.no" class="mail-link">alessandro.pizzigolotto@nhh.no</a>
     </div>
@@ -102,7 +102,7 @@
       }
     }
     nav & {
-      &:hover {
+      &:hover, &.active {
         color: $primary-orange;
 
         &::after {
