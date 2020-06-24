@@ -17,7 +17,8 @@
     "node-sass": "^4.14.1",
     "normalize-scss": "^7.0.1",
     "nuxt": "^2.13.0",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^8.0.2",
+    "vue-meta": "^2.4.0"
   },
   "devDependencies": {
     "eslint-config-prettier": "^6.11.0",

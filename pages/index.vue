@@ -4,97 +4,113 @@
       <div class="text-container">
         <div class="title">
           <span>
-            Alessandro <br>
-            Pizzigolotto
+            Alessandro
+            <br />Pizzigolotto
           </span>
         </div>
         <div class="copy">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur cupiditate quisquam suscipit. Dolorem fugiat in laudantium maiores nulla odit rem tempora. Aliquam aperiam facilis placeat quaerat quis soluta veniam.
+          Welcome to my website! I am currently a Doctoral Candidate of the
+          <a
+            href="https://www.nhh.no/en/departments/economics/"
+          >Department of Economics</a> at the
+          <a href="https://www.nhh.no/en/">Norwegian School of Economics (NHH)</a>. I am also affiliated with the
+          <a
+            href="https://www.nhh.no/en/research-centres/fair/"
+          >Centre for Empirical Labor Economics (FAIR-CELE)</a>.
+          <br />My research focuses on the use of micro-econometric methods to investigate topics at the intersection of culture economics, household finance and political economy.
         </div>
       </div>
       <div class="pizzi-pic">
-        <img src="/img/pizziboi.png" alt="pizziboi status symbol">
+        <img src="/img/pizziboi.png" alt="pizziboi status symbol" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  export default {
+export default {
+  head () {
+    return {
+      title: `Home`,
+    }
   }
+}
 </script>
 
 <style lang="scss" scoped>
-  @import '~assets/scss/variables';
-  .container {
-    padding: 10vw 0;
-    box-sizing: border-box;
+@import '~assets/scss/variables';
+.container {
+  padding: 10vw 0;
+  box-sizing: border-box;
 
-    > div {
-      align-items: center;
-    }
+  > div {
+    align-items: center;
   }
+}
 
+.title {
+  margin-bottom: 2vw;
+  padding-left: 30px;
+  position: relative;
 
-  .title {
-    margin-bottom: 2vw;
-    padding-left: 30px;
-    position: relative;
-
-    span {
-      display: inline-block;
-      opacity: 0;
-      transform: translateX(10%);
-      transition: all 0.4s 0.3s ease-out;
-
-      .loaded & {
-        opacity: 1;
-        transform: none;
-      }
-    }
-
-    &:before {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      content: '';
-      border-left: 0px solid currentColor;
-      transition: border-left-width 0.3s ease-out;
-      .loaded & {
-        border-left-width: 10px;
-      }
-    }
-  }
-
-  .text-container {
-    padding-right: 5vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 0 0 20vw;
-  }
-
-  .pizzi-pic {
-    flex:0 0 40vw;
-    background: linear-gradient(to right, #{$primary-orange-darkest},  #{$primary-orange-darker});
-    border-radius: 15px;
-    overflow: hidden;
-    display: flex;
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .copy {
+  span {
+    display: inline-block;
     opacity: 0;
-    transform: translateY(20%);
-    transition: all 0.3s 0.7s ease-out;
+    transform: translateX(10%);
+    transition: all 0.4s 0.3s ease-out;
+
     .loaded & {
-      transform: none;
       opacity: 1;
+      transform: none;
     }
   }
+
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    content: '';
+    border-left: 0px solid currentColor;
+    transition: border-left-width 0.3s ease-out;
+    .loaded & {
+      border-left-width: 10px;
+    }
+  }
+}
+
+.text-container {
+  padding-right: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 20vw;
+}
+
+.pizzi-pic {
+  flex: 0 0 40vw;
+  background: linear-gradient(
+    to right,
+    #{$primary-orange-darkest},
+    #{$primary-orange-darker}
+  );
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.copy {
+  opacity: 0;
+  transform: translateY(20%);
+  transition: all 0.3s 0.7s ease-out;
+  .loaded & {
+    transform: none;
+    opacity: 1;
+  }
+}
 </style>
