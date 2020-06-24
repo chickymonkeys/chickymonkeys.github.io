@@ -1,0 +1,65 @@
+@import './typography';
+@import './colors';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: $fontSans;
+  color: $primary-orange;
+}
+
+
+#__nuxt, #__layout {
+  min-height: 100%;
+  display: flex;
+}
+
+
+// utility classes
+.fl-row {
+  display: flex;
+  flex-direction: row;
+
+  &.center {
+    justify-content: center;
+  }
+}
+
+.fl-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.aself-start {
+  align-self: flex-start;
+}
+
+
+.standard-padding {
+  padding: 6vw 4vw;
+}
+
+.title {
+  font-family: $fontSerif;
+  font-size: 6vw;
+  line-height: 1.1em;
+  color: $primary-orange;
+  letter-spacing: 0.01em;
+
+  &.small {
+    font-size: 3vw;
+  }
+}
+
+.copy {
+  color: white;
+  font-size: 2vw;
+
+  &.small {
+    font-size: 1.5vw;
+  }
+}

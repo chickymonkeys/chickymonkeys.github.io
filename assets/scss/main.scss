@@ -1,0 +1,8 @@
+// normalize
+@import '~normalize-scss';
+// variables and fonts
+@import './globals/fonts';
+@import './globals/colors';
+@import './globals/typography';
+// global styles
+@import './globals/global';
