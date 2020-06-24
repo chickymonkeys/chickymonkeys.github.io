@@ -16,7 +16,7 @@
           <a href="https://www.nhh.no/en/">Norwegian School of Economics (NHH)</a>. I am also affiliated with the
           <a
             href="https://www.nhh.no/en/research-centres/fair/"
-          >Centre for Empirical Labor Economics (FAIR-CELE)</a>.
+          >Centre for Empirical Labor Economics (FAIR-CELE)</a>. <br>
           <br />My research focuses on the use of micro-econometric methods to investigate topics at the intersection of culture economics, household finance and political economy.
         </div>
       </div>
@@ -45,6 +45,11 @@ export default {
 
   > div {
     align-items: center;
+
+    @media all and (max-width: 768px) {
+      align-items: flex-start;
+      padding-top: 10vw;
+    }
   }
 }
 
@@ -52,6 +57,14 @@ export default {
   margin-bottom: 2vw;
   padding-left: 30px;
   position: relative;
+
+  @media all and (max-width: 768px) {
+    padding-left: 20px;
+    font-size: 9vw;
+    line-height: 1.1em;
+    margin-bottom: 7vw;
+    margin-top: 2vw;
+  }
 
   span {
     display: inline-block;
@@ -97,10 +110,24 @@ export default {
   border-radius: 15px;
   overflow: hidden;
   display: flex;
+  align-self: center;
+
+  @media all and (max-width: 768px) {
+    width: 25vw;
+    height: 25vw;
+    position: absolute;
+    top: 0vw;
+    right: 8vw;
+  }
 
   img {
     width: 100%;
     height: auto;
+
+    @media all and (max-width: 768px) {
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
 
@@ -111,6 +138,20 @@ export default {
   .loaded & {
     transform: none;
     opacity: 1;
+  }
+
+  @media all and (max-width: 768px) {
+    font-size: 4vw;
+    line-height: 1.3em;
+  }
+}
+
+a, a:visited {
+  color: currentColor;
+  transition: color 0.3s ease-out;
+
+  &:hover {
+    color: $pizzi-gold;
   }
 }
 </style>

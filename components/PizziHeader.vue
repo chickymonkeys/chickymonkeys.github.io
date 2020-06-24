@@ -1,41 +1,81 @@
 <template>
   <div class="header">
-    <nav>
-      <nuxt-link to="/">home</nuxt-link>
-      <nuxt-link to="/research">research</nuxt-link>
-      <nuxt-link to="/teaching">teaching</nuxt-link>
-    </nav>
+    <div class="row centered disappear" :class="{ 'secondaryPage': notHomepage }">
+      <nuxt-link to="/" class="pizzi-smol"><img src="/img/pizziboi.png" alt="Alessandro Pizzigolotto"> AP</nuxt-link>
+    </div>
+    <div class="row">
+      <nav>
+        <nuxt-link to="/">home</nuxt-link>
+        <nuxt-link to="/research">research</nuxt-link>
+        <a href="https://mega.nz/file/IGZQzIYL#rc3yMQ1dcYHXTiXk4UZe9oHcSKXTcPs3iBW5dUrhoIc" target="_blank">cv</a>
+        <nuxt-link to="/teaching">teaching</nuxt-link>
+      </nav>
+      <a href="mailto:alessandro.pizzigolotto@nhh.no" class="mail-link">alessandro.pizzigolotto@nhh.no</a>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
+    computed: {
+      notHomepage () {
+        return this.$route.path !== "/"
+      }
+    }
 
   }
 </script>
 
 <style lang="scss" scoped>
   @import '~assets/scss/variables';
+
+  .mail-link {
+    @media all and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+
+    @media all and (max-width: 768px) {
+      justify-content: center;
+    }
+
+    &.centered {
+      justify-content: center;
+    }
+
+    &.disappear {
+      position: relative;
+      margin-top: -5.3vw;
+      opacity: 0;
+      transition: margin-top 0.3s ease-out, opacity 0.2s 0.1s ease-out;
+
+      @media all and (max-width: 768px) {
+        margin-top: -20vw;
+      }
+
+      &.secondaryPage {
+        margin-top: 0;
+        opacity: 1;
+      }
+    }
+  }
+
   .header {
     padding: 2vw 3vw;
 
+    @media all and (max-width: 768px) {
+      padding: 5vw;
+    }
   }
   nav  {
     display: inline-flex;
     flex-direction: row;
     justify-content: flex-start;
     position: relative;
-
-    &::after {
-      position: absolute;
-      bottom: -2px;
-      height: 2px;
-      width: 100%;
-      left: 0;
-      content: '';
-      background-color: none;
-    }
-
   }
 
   a, a:visited {
@@ -46,30 +86,75 @@
     display: inline-block;
     position: relative;
     transition: color 0.3s ease-out;
+    z-index: 1;
 
-    &:hover {
-      color: $primary-orange;
-
-      &::after {
-        transform: scaleX(1);
-      }
+    @media all and (max-width: 768px) {
+      font-size: 4.5vw;
+      font-weight: bold;
     }
+
 
     &:not(:last-child) {
       margin-right: 2vw;
-    }
 
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      width: 100%;
-      bottom: -2px;
-      height: 2px;
-      background: currentColor;
-      transform-origin: center;
-      transform: scaleX(0);
-      transition: transform 0.2s ease-out;
+      @media all and (max-width: 768px) {
+        margin-right: 4.5vw;
+      }
+    }
+    nav & {
+      &:hover {
+        color: $primary-orange;
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: -10px;
+        width: calc(100% + 20px);
+        bottom: 0em;
+        height: 1.4em;
+        background: $pizzi-gold;
+        transform-origin: left center;
+        z-index: -1;
+        transform: scaleX(0);
+        transition: transform 0.2s ease-out;
+      }
+    }
+  }
+
+  a.pizzi-smol {
+    font-family: $fontSerif;
+    color: $primary-orange;
+    font-size: 2vw;
+    margin-bottom: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media all and (max-width: 768px) {
+      font-size: 8vw;
+      margin-bottom: 5vw;
+    }
+    img {
+      margin-right: 10px;
+      width: 4vw;
+      height: 4vw;
+      border-radius: 50%;
+      border: 2px solid $pizzi-gold;
+      background: linear-gradient(
+          to right,
+          #{$primary-orange-darkest},
+          #{$primary-orange-darker}
+      );
+
+      @media all and (max-width: 768px) {
+        width: 15vw;
+        height: 15vw;
+      }
     }
   }
 </style>

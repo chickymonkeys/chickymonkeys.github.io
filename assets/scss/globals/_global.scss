@@ -23,9 +23,16 @@ body {
 .fl-row {
   display: flex;
   flex-direction: row;
+  position: relative;
 
   &.center {
     justify-content: center;
+  }
+
+  @media all and (max-width: 768px) {
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 5vw;
   }
 }
 
