@@ -62,7 +62,7 @@ export default {
     padding-left: 20px;
     font-size: 9vw;
     line-height: 1.1em;
-    margin-bottom: 7vw;
+    margin-bottom: 12vw;
     margin-top: 2vw;
   }
 
@@ -138,11 +138,6 @@ export default {
   .loaded & {
     transform: none;
     opacity: 1;
-  }
-
-  @media all and (max-width: 768px) {
-    font-size: 4vw;
-    line-height: 1.3em;
   }
 }
 
