@@ -2,19 +2,17 @@
   <div>
     <div class="fl-row center">
       <div class="text-container">
-        <transition name="slide-fade">
-          <div class="huge-title">
-            <span>
-              Alessandro
-              <br />Pizzigolotto
-            </span>
-          </div>
-        </transition>
-        <div class="copy">
+        <div class="huge-title" ref="title">
+          <span>
+            Alessandro
+            <br />Pizzigolotto
+          </span>
+        </div>
+        <div class="copy" ref="copy">
           <nuxt-content :document="page" />
         </div>
       </div>
-      <div class="pizzi-pic">
+      <div class="pizzi-pic" ref="image">
         <img src="/img/pizziboi.png" alt="pizziboi status symbol" />
       </div>
     </div>
@@ -22,36 +20,97 @@
 </template>
 
 <script>
+  import anime from 'animejs'
+
   export default {
     head() {
       return {
         title: `Home`,
       }
     },
+    mounted() {
+      const title = this.$refs.title
+      const copy = this.$refs.copy
+      const image = this.$refs.image
+      this.$nextTick(() => {
+        requestAnimationFrame(() => {
+          anime( {
+            targets: title,
+            translateY: ['-0.5em', 0],
+            opacity: 1,
+            duration: 600,
+            delay: 150,
+            easing: 'easeOutSine'
+          })
+          anime({
+            targets: copy,
+            translateX: ['-0.5em', 0],
+            opacity: 1,
+            duration: 600,
+            delay: 300,
+            easing: 'easeOutSine'
+          })
+          anime({
+            targets: image,
+            translateX: [40, 0],
+            opacity: 1,
+            duration: 600,
+            delay: 450,
+            easing: 'easeOutSine'
+          })
+        })
+      })
+    },
+    beforeRouteLeave(to, from, next) {
+
+      const title = this.$refs.title
+      const copy = this.$refs.copy
+      const image = this.$refs.image
+
+
+      anime( {
+        targets: title,
+        translateY: '-0.5em',
+        opacity: 0,
+        duration: 100
+      })
+      anime({
+        targets: copy,
+        translateX: '-0.5em',
+        opacity: 0,
+        duration: 100
+      })
+      const a = anime({
+        targets: image,
+        translateX: '0.5em',
+        opacity: 0,
+        duration: 100
+      })
+
+      a.finished.then(() => {
+        next()
+      })
+    },
     async asyncData ({ $content }) {
-    const page = await $content('home').fetch()
-      return {
-        page
+      const page = await $content('home').fetch()
+        return {
+          page
+        }
       }
-    }
   }
 </script>
 
 <style lang="scss" scoped>
 @import '~assets/scss/variables';
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
-.slide-fade-enter-active {
-  transition: all 0.3s ease;
+
+.fl-row.center {
+  padding: 4vw 0 0;
+
+  @media all and (max-width: 768px) {
+    padding: 10vw 5vw;
+  }
 }
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-.slide-fade-enter, .slide-fade-leave-to
-    /* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
-}
+
 .container {
   padding: 10vw 0;
   box-sizing: border-box;
@@ -67,7 +126,7 @@
 }
 
 .pizzi-pic {
-  flex: 0 0 40vw;
+  flex: 0 0 28vw;
   background: linear-gradient(
     to right,
     #{$primary-orange-darkest},
@@ -82,7 +141,7 @@
     width: 25vw;
     height: 25vw;
     position: absolute;
-    top: 0vw;
+    top: 10vw;
     right: 8vw;
   }
 
@@ -96,4 +155,21 @@
     }
   }
 }
+
+  // animation settings
+  .huge-title {
+    transform: translateY(-.5em);
+    opacity: 0;
+    position: relative;
+  }
+  .copy {
+    transform: translateY(-.5em);
+    opacity: 0;
+    position: relative;
+  }
+  .pizzi-pic {
+    transform: translateX(.5em);
+    opacity: 0;
+  }
+
 </style>

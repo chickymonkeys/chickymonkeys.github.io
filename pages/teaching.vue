@@ -1,8 +1,8 @@
 <template>
   <div>
-    <page-title>Teaching</page-title>
+    <page-title ref="title">Teaching</page-title>
     <div class="fl-column aself-start standard-padding">
-      <div class="publication" v-for="t in teaching" :key="t.subject">
+      <div class="publication" ref="publications" v-for="t in teaching" :key="t.subject">
         <div class="copy small">
           <span>
             <strong>{{ t.semester }}</strong>
@@ -22,51 +22,102 @@
 </template>
 
 <script>
-import PageTitle from "~/components/PageTitle"
-export default {
-  components: {
-    PageTitle
-  },
-  async asyncData ({ $content }) {
-  const teaching = await $content('teaching').sortBy('date','desc').fetch()
-  console.log(teaching)
-    return {
-      teaching
-    }
-  },
-  head () {
-    return {
-      title: `Teaching`,
+  import anime from 'animejs'
+  import PageTitle from "~/components/PageTitle"
+
+  export default {
+    components: {
+      PageTitle
+    },
+    async asyncData ({ $content }) {
+      const teaching = await $content('teaching').sortBy('date','desc').fetch()
+      console.log(teaching)
+      return {
+        teaching
+      }
+    },
+    head() {
+      return {
+        title: `Teaching`,
+      }
+    },
+
+    mounted() {
+      anime({
+        targets: this.$refs.title.$el,
+        translateX: [30, 0],
+        opacity: 1,
+        duration: 700,
+        easing: 'easeOutSine'
+      })
+      anime({
+        targets: this.$refs.publications,
+        translateY: [30, 0],
+        opacity: 1,
+        duration: 700,
+        delay: 200 + anime.stagger(400),
+        easing: 'easeOutSine'
+      })
+    },
+    beforeRouteLeave(to, from, next) {
+      anime({
+        targets: this.$refs.title.$el,
+        translateX: [0, 30],
+        opacity: 0,
+        duration: 100,
+      })
+      const a = anime({
+        targets: this.$refs.publications,
+        translateY: [0, 30],
+        opacity: 0,
+        duration: 100,
+      })
+
+      a.finished.then(() => {
+        next()
+      })
     }
   }
-}
 </script>
 
 <style lang="scss" scoped>
-@import '~assets/scss/variables';
+  @import '~assets/scss/variables';
 
 .publication {
   width: 100%;
   padding: 1vw 0;
-}
+  opacity: 0;
 
-.container {
-  padding: 10vw 0;
-  box-sizing: border-box;
+  &:first-child {
+    padding-top: 3vw;
 
-  > div {
-    align-items: center;
+    @media all and (max-width: 768px) {
+      padding-top: 8vw;
+    }
+
+  }
+
+  @media all and (max-width: 768px) {
+    padding: 3vw 0;
   }
 }
+  .container {
+    padding: 10vw 0;
+    box-sizing: border-box;
 
-.title {
-  margin-bottom: 2vw;
-  position: relative;
-}
+    > div {
+      align-items: center;
+    }
+  }
 
-.copy {
-  padding-right: 10vw;
-}
+  .title {
+    margin-bottom: 2vw;
+    position: relative;
+  }
+
+  .copy {
+    padding-right: 10vw;
+  }
 
 strong {
   display: inline-block;
@@ -78,24 +129,28 @@ em {
   margin-right: 0.5em;
 }
 
-.external {
-  background: transparent;
-  border-radius: 4px;
-  color: $plain-text;
-  padding: 1vw 2vw;
-  display: inline-block;
-  border: 2px solid $plain-text;
-  margin-top: 2vw;
-  transition: all 0.3s ease-out;
+  .external {
+    background: transparent;
+    border-radius: 4px;
+    color: $plain-text;
+    padding: 1vw 2vw;
+    display: inline-block;
+    border: 2px solid $plain-text;
+    margin-top: 2vw;
+    transition: all 0.3s ease-out;
 
-  &,
-  &:visited {
-    text-decoration: none;
+    &,
+    &:visited {
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: $plain-text;
+      color: $secondary-blue;
+    }
   }
 
-  &:hover {
-    background-color: $plain-text;
-    color: $secondary-blue;
+  .page-title {
+    opacity: 0;
   }
-}
 </style>

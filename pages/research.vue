@@ -1,8 +1,8 @@
 <template>
   <div>
-    <page-title>Research</page-title>
+    <page-title ref="title">Research</page-title>
     <div class="fl-column aself-start standard-padding">
-      <div class="publication" v-for="res in research" :key="res.title">
+      <div class="publication" ref="publications" v-for="res in research" :key="res.title">
         <div class="title-container">
           <div class="title small">{{res.title}}</div>
           <div class="coauthor" v-if="res.coauthor">with {{ res.coauthor }}</div>
@@ -18,6 +18,8 @@
 
 <script>
 import PageTitle from "~/components/PageTitle"
+import anime from 'animejs'
+
 export default {
   components: {
     PageTitle
@@ -32,6 +34,41 @@ export default {
     return {
       title: `Research`,
     }
+  },
+  mounted() {
+    anime({
+      targets: this.$refs.title.$el,
+      translateX: [30, 0],
+      opacity: 1,
+      duration: 700,
+      easing: 'easeOutSine'
+    })
+    anime({
+      targets: this.$refs.publications,
+      translateY: [30, 0],
+      opacity: 1,
+      duration: 700,
+      delay: 200 + anime.stagger(400),
+      easing: 'easeOutSine'
+    })
+  },
+  beforeRouteLeave(to, from, next) {
+    anime({
+      targets: this.$refs.title.$el,
+      translateX: [0, 30],
+      opacity: 0,
+      duration: 100,
+    })
+    const a = anime({
+      targets: this.$refs.publications,
+      translateY: [0, 30],
+      opacity: 0,
+      duration: 100
+    })
+
+    a.finished.then(() => {
+      next()
+    })
   }
 }
 </script>
@@ -43,6 +80,7 @@ export default {
   border-bottom: 2px solid $plain-text;
   padding: 3vw 0;
   width: 100%;
+  opacity: 0;
 
   @media all and (max-width: 768px) {
     padding: 6vw 0;
@@ -61,6 +99,10 @@ export default {
 .title-container {
   margin-bottom: 2vw;
   position: relative;
+}
+
+.page-title {
+  opacity: 0;
 }
 
 .copy {

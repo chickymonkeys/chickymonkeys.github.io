@@ -8,7 +8,7 @@
     <div class="row">
       <nav>
         <nuxt-link :class="{ active: $route.path === '/' }" to="/">home</nuxt-link>
-        <nuxt-link :class="{ active: $route.path === '/research' }" to="/research">research</nuxt-link>
+<!--        <nuxt-link :class="{ active: $route.path === '/research' }" to="/research">research</nuxt-link>-->
         <a
           href="https://mega.nz/file/IGZQzIYL#rc3yMQ1dcYHXTiXk4UZe9oHcSKXTcPs3iBW5dUrhoIc"
           target="_blank"
@@ -146,7 +146,7 @@ a:visited {
 a.pizzi-smol {
   font-family: $fontSerif;
   color: $primary-orange;
-  font-size: 2vw;
+  font-size: 3vw;
   margin-bottom: 1vw;
   display: flex;
   justify-content: center;
@@ -158,8 +158,8 @@ a.pizzi-smol {
   }
   img {
     margin-right: 10px;
-    width: 4vw;
-    height: 4vw;
+    width: 6vw;
+    height: 6vw;
     border-radius: 50%;
     border: 2px solid $pizzi-gold;
     background: linear-gradient(
