@@ -46,13 +46,18 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
-  ],
+  buildModules: ['@nuxt/typescript-build'],
   /*
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxt/content'
   ],
+
+  content: {
+    // Options
+  },
+
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
