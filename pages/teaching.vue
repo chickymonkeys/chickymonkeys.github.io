@@ -2,9 +2,19 @@
   <div>
     <page-title>Teaching</page-title>
     <div class="fl-column aself-start standard-padding">
-      <div class="publication">
+      <div class="publication" v-for="t in teaching" :key="t.subject">
         <div class="copy small">
-          <nuxt-content :document="teaching" />
+          <span>
+            <strong>{{ t.semester }}</strong>
+            <em>{{ t.subject}}</em>
+            <br />
+            <em>{{ t.role }}</em>
+          </span>
+          <span>
+            <strong>{{ t.institution }}</strong>
+            <br />
+            {{ t.degree }}
+          </span>
         </div>
       </div>
     </div>
@@ -18,7 +28,7 @@ export default {
     PageTitle
   },
   async asyncData ({ $content }) {
-  const teaching = await $content('teaching').fetch()
+  const teaching = await $content('teaching').sortBy('date','desc').fetch()
   console.log(teaching)
     return {
       teaching
@@ -37,7 +47,7 @@ export default {
 
 .publication {
   width: 100%;
-  padding: 3vw 0;
+  padding: 1vw 0;
 }
 
 .container {
@@ -56,6 +66,16 @@ export default {
 
 .copy {
   padding-right: 10vw;
+}
+
+strong {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+em {
+  display: inline-block;
+  margin-right: 0.5em;
 }
 
 .external {
