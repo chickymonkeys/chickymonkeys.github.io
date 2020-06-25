@@ -1,25 +1,10 @@
 <template>
   <div>
+    <page-title>Teaching</page-title>
     <div class="fl-column aself-start standard-padding">
       <div class="publication">
-        <div class="title small">Learning the lesson of systemic banking crysis</div>
         <div class="copy small">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad adipisci aliquam dicta dignissimos enim et excepturi expedita fugit labore, maiores neque odio, perspiciatis praesentium quisquam sit, tempore voluptate.
-          <br />
-          <br />
-          <strong>Author:</strong> Pizzigolotto et al.
-          <br />
-          <strong>Coverage:</strong> Test Coverage
-        </div>
-        <a href="https://www.google.it" class="external copy small">Read me</a>
-      </div>
-      <div class="publication">
-        <div class="title small">Learning the lesson of systemic banking crysis</div>
-        <div class="copy small">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad adipisci aliquam dicta dignissimos enim et excepturi expedita fugit labore, maiores neque odio, perspiciatis praesentium quisquam sit, tempore voluptate.
-          <br />
-          <br />
-          <strong>Author:</strong> Pizzigolotto et al.
+          <nuxt-content :document="teaching" />
         </div>
       </div>
     </div>
@@ -27,7 +12,18 @@
 </template>
 
 <script>
+import PageTitle from "~/components/PageTitle"
 export default {
+  components: {
+    PageTitle
+  },
+  async asyncData ({ $content }) {
+  const teaching = await $content('teaching').fetch()
+  console.log(teaching)
+    return {
+      teaching
+    }
+  },
   head () {
     return {
       title: `Teaching`,
@@ -40,7 +36,7 @@ export default {
 @import '~assets/scss/variables';
 
 .publication {
-  border-bottom: 2px solid white;
+  width: 100%;
   padding: 3vw 0;
 }
 
@@ -65,10 +61,10 @@ export default {
 .external {
   background: transparent;
   border-radius: 4px;
-  color: white;
+  color: $plain-text;
   padding: 1vw 2vw;
   display: inline-block;
-  border: 2px solid white;
+  border: 2px solid $plain-text;
   margin-top: 2vw;
   transition: all 0.3s ease-out;
 
@@ -78,7 +74,7 @@ export default {
   }
 
   &:hover {
-    background-color: white;
+    background-color: $plain-text;
     color: $secondary-blue;
   }
 }

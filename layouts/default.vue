@@ -33,19 +33,20 @@
 </script>
 
 <style lang="scss">
-  @import "~/assets/scss/variables";
+@import '~/assets/scss/variables';
 
-  .container {
-    background-color: $secondary-blue;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
+.container {
+  background-color: $secondary-blue;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-  .inner-container {
-    flex-grow: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.inner-container {
+  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 </style>

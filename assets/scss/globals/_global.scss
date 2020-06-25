@@ -16,6 +16,11 @@ body {
 #__nuxt, #__layout {
   min-height: 100%;
   display: flex;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
 }
 
 
@@ -39,6 +44,7 @@ body {
 .fl-column {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .aself-start {
@@ -111,7 +117,7 @@ body {
 }
 
 .copy {
-  color: white;
+  color: $plain-text;
   font-size: 2vw;
 
   &.small {

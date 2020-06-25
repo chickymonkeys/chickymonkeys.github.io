@@ -19,7 +19,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'keywords', content: 'keyword 1, keyword 2' },
+      { name: 'keywords', content: 'alessandro pizzigolotto, economics, phd, student, microeconomics, culture, household finance' },
       { hid: 'description', name: 'description', content: 'Alessandro Pizzigolotto\'s Website' }
     ],
     link: [

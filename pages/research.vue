@@ -1,33 +1,33 @@
 <template>
   <div>
+    <page-title>Research</page-title>
     <div class="fl-column aself-start standard-padding">
-      <div class="publication">
-        <div class="title small">Learning the lesson of systemic banking crysis</div>
-        <div class="copy small">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad adipisci aliquam dicta dignissimos enim et excepturi expedita fugit labore, maiores neque odio, perspiciatis praesentium quisquam sit, tempore voluptate.
-          <br />
-          <br />
-          <strong>Author:</strong> Pizzigolotto et al.
-          <br />
-          <strong>Coverage:</strong> Test Coverage
+      <div class="publication" v-for="res in research" :key="res.title">
+        <div class="title-container">
+          <div class="title small">{{res.title}}</div>
+          <div class="coauthor" v-if="res.coauthor">with {{ res.coauthor }}</div>
         </div>
-        <a href="https://www.google.it" class="external copy small">Read me</a>
-      </div>
-      <div class="publication">
-        <div class="title small">Learning the lesson of systemic banking crysis</div>
         <div class="copy small">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad adipisci aliquam dicta dignissimos enim et excepturi expedita fugit labore, maiores neque odio, perspiciatis praesentium quisquam sit, tempore voluptate.
-          <br />
-          <br />
-          <strong>Author:</strong> Pizzigolotto et al.
+          <nuxt-content :document="res" />
         </div>
+        <a v-if="res.cta" href="res.cta" class="external copy small">Read Me</a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import PageTitle from "~/components/PageTitle"
 export default {
+  components: {
+    PageTitle
+  },
+  async asyncData ({ $content }) {
+  const research = await $content('research').sortBy('date','desc').fetch()
+    return {
+      research
+    }
+  },
   head () {
     return {
       title: `Research`,
@@ -40,8 +40,9 @@ export default {
 @import '~assets/scss/variables';
 
 .publication {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid $plain-text;
   padding: 3vw 0;
+  width: 100%;
 
   @media all and (max-width: 768px) {
     padding: 6vw 0;
@@ -57,7 +58,7 @@ export default {
   }
 }
 
-.title {
+.title-container {
   margin-bottom: 2vw;
   position: relative;
 }
@@ -73,10 +74,10 @@ export default {
 .external {
   background: transparent;
   border-radius: 4px;
-  color: white;
+  color: $plain-text;
   padding: 1vw 2vw;
   display: inline-block;
-  border: 2px solid white;
+  border: 2px solid $plain-text;
   margin-top: 2vw;
   transition: all 0.3s ease-out;
 
@@ -91,7 +92,7 @@ export default {
   }
 
   &:hover {
-    background-color: white;
+    background-color: $plain-text;
     color: $secondary-blue;
   }
 }
