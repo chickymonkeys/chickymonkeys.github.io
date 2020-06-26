@@ -162,11 +162,7 @@ a.pizzi-smol {
     height: 6vw;
     border-radius: 50%;
     border: 2px solid $hover-contrast;
-    background: linear-gradient(
-      to right,
-      #{$primary-darkest},
-      #{$primary-darker}
-    );
+    background: linear-gradient(135deg, #{$primary-darker}, #{$primary});
 
     @media all and (max-width: 768px) {
       width: 15vw;
