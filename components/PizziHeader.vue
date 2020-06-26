@@ -8,7 +8,7 @@
     <div class="row">
       <nav>
         <nuxt-link :class="{ active: $route.path === '/' }" to="/">home</nuxt-link>
-<!--        <nuxt-link :class="{ active: $route.path === '/research' }" to="/research">research</nuxt-link>-->
+        <nuxt-link :class="{ active: $route.path === '/research' }" to="/research">research</nuxt-link>
         <a
           href="https://mega.nz/file/IGZQzIYL#rc3yMQ1dcYHXTiXk4UZe9oHcSKXTcPs3iBW5dUrhoIc"
           target="_blank"
@@ -112,7 +112,7 @@ a:visited {
   nav & {
     &:hover,
     &.active:first-child {
-      color: $primary-orange;
+      color: $primary;
 
       &::after {
         transform-origin: left center !important;
@@ -127,7 +127,7 @@ a:visited {
       width: calc(100% + 20px);
       bottom: 0em;
       height: 1.4em;
-      background: $pizzi-gold;
+      background: $hover-contrast;
       transform-origin: left center;
       z-index: -1;
       transform: scaleX(0);
@@ -145,7 +145,7 @@ a:visited {
 
 a.pizzi-smol {
   font-family: $fontSerif;
-  color: $primary-orange;
+  color: $primary;
   font-size: 3vw;
   margin-bottom: 1vw;
   display: flex;
@@ -161,11 +161,11 @@ a.pizzi-smol {
     width: 6vw;
     height: 6vw;
     border-radius: 50%;
-    border: 2px solid $pizzi-gold;
+    border: 2px solid $hover-contrast;
     background: linear-gradient(
       to right,
-      #{$primary-orange-darkest},
-      #{$primary-orange-darker}
+      #{$primary-darkest},
+      #{$primary-darker}
     );
 
     @media all and (max-width: 768px) {

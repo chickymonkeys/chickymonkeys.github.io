@@ -129,8 +129,8 @@
   flex: 0 0 28vw;
   background: linear-gradient(
     to right,
-    #{$primary-orange-darkest},
-    #{$primary-orange-darker}
+    #{$primary-darkest},
+    #{$primary-darker}
   );
   border-radius: 15px;
   overflow: hidden;
@@ -156,20 +156,19 @@
   }
 }
 
-  // animation settings
-  .huge-title {
-    transform: translateY(-.5em);
-    opacity: 0;
-    position: relative;
-  }
-  .copy {
-    transform: translateY(-.5em);
-    opacity: 0;
-    position: relative;
-  }
-  .pizzi-pic {
-    transform: translateX(.5em);
-    opacity: 0;
-  }
-
+// animation settings
+.huge-title {
+  transform: translateY(-0.5em);
+  opacity: 0;
+  position: relative;
+}
+.copy {
+  transform: translateY(-0.5em);
+  opacity: 0;
+  position: relative;
+}
+.pizzi-pic {
+  transform: translateX(0.5em);
+  opacity: 0;
+}
 </style>

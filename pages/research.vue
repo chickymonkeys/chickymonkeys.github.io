@@ -5,12 +5,15 @@
       <div class="publication" ref="publications" v-for="res in research" :key="res.title">
         <div class="title-container">
           <div class="title small">{{res.title}}</div>
-          <div class="coauthor" v-if="res.coauthor">with {{ res.coauthor }}</div>
+          <div class="coauthor" v-if="res.coauthor">
+            with
+            <a v-if="res.liauthor" :href="res.liauthor">{{ res.coauthor }}</a>
+          </div>
         </div>
         <div class="copy small">
           <nuxt-content :document="res" />
         </div>
-        <a v-if="res.cta" href="res.cta" class="external copy small">Read Me</a>
+        <a v-if="res.cta" class="external copy small" :href="res.cta">Read Me</a>
       </div>
     </div>
   </div>
@@ -99,6 +102,12 @@ export default {
 .title-container {
   margin-bottom: 2vw;
   position: relative;
+
+  a,
+  a:hover,
+  a:visited {
+    color: $primary;
+  }
 }
 
 .page-title {
@@ -135,7 +144,7 @@ export default {
 
   &:hover {
     background-color: $plain-text;
-    color: $secondary-blue;
+    color: $secondary;
   }
 }
 </style>

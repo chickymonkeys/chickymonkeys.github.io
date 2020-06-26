@@ -36,7 +36,7 @@
 @import '~/assets/scss/variables';
 
 .container {
-  background-color: $secondary-blue;
+  background-color: $secondary;
   height: 100%;
   display: flex;
   flex-direction: column;
