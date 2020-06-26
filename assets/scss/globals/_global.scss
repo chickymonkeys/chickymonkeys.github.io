@@ -9,7 +9,7 @@ html, body {
 
 body {
   font-family: $fontSans;
-  color: $primary-orange;
+  color: $primary;
 }
 
 
@@ -60,7 +60,7 @@ body {
   font-family: $fontSerif;
   font-size: 6vw;
   line-height: 1.1em;
-  color: $primary-orange;
+  color: $primary;
   letter-spacing: 0.01em;
 
   &.small {
@@ -76,7 +76,7 @@ body {
   font-family: $fontSerif;
   font-size: 4.5vw;
   line-height: 1.1em;
-  color: $primary-orange;
+  color: $primary;
   letter-spacing: 0.01em;
   margin-bottom: 2vw;
   padding-left: 30px;
@@ -139,7 +139,7 @@ body {
     transition: color 0.3s ease-out;
 
     &:hover {
-      color: $pizzi-gold;
+      color: $hover-contrast;
     }
   }
 }

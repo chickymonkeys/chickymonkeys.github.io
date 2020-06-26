@@ -81,7 +81,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '~assets/scss/variables';
+@import '~assets/scss/variables';
 
 .publication {
   width: 100%;
@@ -94,30 +94,29 @@
     @media all and (max-width: 768px) {
       padding-top: 8vw;
     }
-
   }
 
   @media all and (max-width: 768px) {
     padding: 3vw 0;
   }
 }
-  .container {
-    padding: 10vw 0;
-    box-sizing: border-box;
+.container {
+  padding: 10vw 0;
+  box-sizing: border-box;
 
-    > div {
-      align-items: center;
-    }
+  > div {
+    align-items: center;
   }
+}
 
-  .title {
-    margin-bottom: 2vw;
-    position: relative;
-  }
+.title {
+  margin-bottom: 2vw;
+  position: relative;
+}
 
-  .copy {
-    padding-right: 10vw;
-  }
+.copy {
+  padding-right: 10vw;
+}
 
 strong {
   display: inline-block;
@@ -129,28 +128,28 @@ em {
   margin-right: 0.5em;
 }
 
-  .external {
-    background: transparent;
-    border-radius: 4px;
-    color: $plain-text;
-    padding: 1vw 2vw;
-    display: inline-block;
-    border: 2px solid $plain-text;
-    margin-top: 2vw;
-    transition: all 0.3s ease-out;
+.external {
+  background: transparent;
+  border-radius: 4px;
+  color: $plain-text;
+  padding: 1vw 2vw;
+  display: inline-block;
+  border: 2px solid $plain-text;
+  margin-top: 2vw;
+  transition: all 0.3s ease-out;
 
-    &,
-    &:visited {
-      text-decoration: none;
-    }
-
-    &:hover {
-      background-color: $plain-text;
-      color: $secondary-blue;
-    }
+  &,
+  &:visited {
+    text-decoration: none;
   }
 
-  .page-title {
-    opacity: 0;
+  &:hover {
+    background-color: $plain-text;
+    color: $secondary;
   }
+}
+
+.page-title {
+  opacity: 0;
+}
 </style>
