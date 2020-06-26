@@ -127,11 +127,7 @@
 
 .pizzi-pic {
   flex: 0 0 28vw;
-  background: linear-gradient(
-    to right,
-    #{$primary-darkest},
-    #{$primary-darker}
-  );
+  background: linear-gradient(135deg, #{$primary-darker}, #{$primary});
   border-radius: 15px;
   overflow: hidden;
   display: flex;
