@@ -6,7 +6,7 @@
         <div class="copy small">
           <span>
             <strong>{{ t.semester }}</strong>
-            <em>{{ t.subject}}</em>
+            {{ t.subject}}
             <br />
             <em>{{ t.role }}</em>
           </span>
