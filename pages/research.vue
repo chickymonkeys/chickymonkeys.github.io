@@ -5,9 +5,36 @@
       <div class="publication" ref="publications" v-for="res in research" :key="res.title">
         <div class="title-container">
           <div class="title small">{{res.title}}</div>
-          <div class="coauthor" v-if="res.coauthor">
-            with
-            <a v-if="res.liauthor" :href="res.liauthor">{{ res.coauthor }}</a>
+          <div class="coauthors" v-if="res.coauthors">
+            <span class="coauthor" v-for="(c, index) in res.coauthors" :key="c.name">
+              <span v-if="c.coauthor.name && index == 0 & index != res.coauthors.length - 1">
+                with
+                <span v-if="c.coauthor.link">
+                  <a :href="c.coauthor.link">{{ c.coauthor.name }}</a>,
+                </span>
+                <span v-if="!c.coauthor.link">{{ c.coauthor.name }},</span>
+              </span>
+              <span v-if="c.coauthor.name && index > 0 && index != res.coauthors.length - 1">
+                <span v-if="c.coauthor.link">
+                  <a :href="c.coauthor.link">{{ c.coauthor.name }}</a>,
+                </span>
+                <span v-if="!c.coauthor.link">{{ c.coauthor.name }},</span>
+              </span>
+              <span v-if="c.coauthor.name && index > 0 && index == res.coauthors.length - 1">
+                and
+                <span v-if="c.coauthor.link">
+                  <a :href="c.coauthor.link">{{ c.coauthor.name }}</a>
+                </span>
+                <span v-if="!c.coauthor.link">{{ c.coauthor.name }}</span>
+              </span>
+              <span v-if="c.coauthor.name && index == 0 && index == res.coauthors.length - 1">
+                with
+                <span v-if="c.coauthor.link">
+                  <a :href="c.coauthor.link">{{ c.coauthor.name }}</a>
+                </span>
+                <span v-if="!c.coauthor.link">{{ c.coauthor.name }}</span>
+              </span>
+            </span>
           </div>
         </div>
         <div class="copy small">
