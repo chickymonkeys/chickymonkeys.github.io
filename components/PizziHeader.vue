@@ -127,7 +127,7 @@ a:visited {
       width: calc(100% + 20px);
       bottom: 0em;
       height: 1.4em;
-      background: $hover-contrast;
+      background: $tertiary;
       transform-origin: left center;
       z-index: -1;
       transform: scaleX(0);
@@ -155,18 +155,24 @@ a.pizzi-smol {
   @media all and (max-width: 768px) {
     font-size: 8vw;
     margin-bottom: 5vw;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 0vw;
   }
   img {
     margin-right: 10px;
     width: 6vw;
     height: 6vw;
     border-radius: 50%;
-    border: 2px solid $hover-contrast;
+    border: 2px solid $tertiary;
     background: linear-gradient(135deg, #{$primary-darker}, #{$primary});
 
     @media all and (max-width: 768px) {
       width: 15vw;
       height: 15vw;
+      order: 2;
+      border-radius: 10px;
+      border: none;
     }
   }
 }

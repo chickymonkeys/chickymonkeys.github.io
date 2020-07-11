@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="{ loaded }">
+  <div class="container" :class="[currentPage, { loaded }]">
     <pizzi-header></pizzi-header>
     <Nuxt class="inner-container" />
     <pizzi-footer></pizzi-footer>
@@ -15,6 +15,11 @@
     data: () => ({
       loaded: false
     }),
+    computed: {
+      currentPage () {
+        return this.$route.name
+      }
+    },
     mounted() {
       this.$nextTick(() => {
           this.$nextTick(() => {
@@ -40,6 +45,10 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+
+  @media all and (max-width: 768px) {
+    position: relative;
+  }
 }
 
 .inner-container {
@@ -48,5 +57,16 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 8vw;
+  @media all and (max-width: 768px) {
+    flex-direction: column;
+    padding-bottom: 0;
+    flex-grow: 0;
+    margin: 8vw 0 15vw;
+
+    .index & {
+      margin-bottom: 4vw;
+    }
+  }
 }
 </style>

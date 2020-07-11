@@ -108,12 +108,12 @@ export default {
 
 .publication {
   border-bottom: 2px solid $plain-text;
-  padding: 3vw 0;
+  padding: 3vw 0 1.5vw;
   width: 100%;
   opacity: 0;
 
   @media all and (max-width: 768px) {
-    padding: 6vw 0;
+    padding: 6vw 0 3vw;
   }
 }
 

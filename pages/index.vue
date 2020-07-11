@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="fl-row center">
+    <div class="fl-row center standard-padding">
       <div class="text-container">
         <div class="huge-title" ref="title">
           <span>
@@ -104,10 +104,11 @@
 @import '~assets/scss/variables';
 
 .fl-row.center {
-  padding: 4vw 0 0;
+  padding-top: 4vw;
 
   @media all and (max-width: 768px) {
-    padding: 10vw 5vw;
+    padding-top: 0;
+    padding-bottom: 10vw;
   }
 }
 
@@ -116,7 +117,7 @@
   box-sizing: border-box;
 
   > div {
-    align-items: center;
+    align-items: flex-start;
 
     @media all and (max-width: 768px) {
       align-items: flex-start;
@@ -134,10 +135,10 @@
   align-self: center;
 
   @media all and (max-width: 768px) {
-    width: 25vw;
-    height: 25vw;
+    width: 23.5vw;
+    height: 23.5vw;
     position: absolute;
-    top: 10vw;
+    top: 0;
     right: 8vw;
   }
 

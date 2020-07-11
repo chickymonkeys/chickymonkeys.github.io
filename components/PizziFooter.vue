@@ -48,13 +48,32 @@ footer {
   justify-content: flex-end;
   align-items: center;
   padding-right: 3vw;
-  padding-bottom: 5vw;
+  padding-bottom: 2vw;
+  position: absolute;
+  transition: all 0.7s ease-in-out;
+
+  @media all and (min-width: 769px) {
+    transform: translate3d(76vw, 90vh, 0);
+    top: 0;
+    left: 0;
+  }
+
+  .index & {
+    @media all and (min-width: 769px) {
+      transform: translate3d(62vw, 51vw, 0);
+    }
+  }
+
   @media all and (max-width: 768px) {
     justify-content: center;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5vw;
   }
 
   .icon {
-    width: 3vw;
+    width: 4vw;
     margin-left: 2vw;
 
     @media all and (max-width: 768px) {
