@@ -144,7 +144,7 @@
 
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
 
     @media all and (max-width: 768px) {
       height: 100%;
