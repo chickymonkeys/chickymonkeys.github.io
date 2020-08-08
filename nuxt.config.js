@@ -49,7 +49,7 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     ['@nuxtjs/google-analytics', {
-      id: 'UA-32682708'
+      id: 'UA-32682708-1'
     }]
   ],
   /*
