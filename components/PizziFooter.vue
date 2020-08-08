@@ -53,10 +53,8 @@ footer {
   transition: all 0.7s ease-in-out;
 
   @media all and (min-width: 769px) {
-    transform: translate3d(76vw, 90vh, 0);
-    top: 0;
-    left: 0;
-    position: fixed;
+    position: static;
+    transition: none;
   }
 
   .index & {

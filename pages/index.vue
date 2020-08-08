@@ -58,6 +58,14 @@
             delay: 450,
             easing: 'easeOutSine'
           })
+          if (process.client) {
+            anime({
+              targets: document.querySelector('footer'),
+              opacity: 1,
+              duration: 600,
+              delay: 300,
+            })
+          }
         })
       })
     },
@@ -66,6 +74,15 @@
       const title = this.$refs.title
       const copy = this.$refs.copy
       const image = this.$refs.image
+
+
+      if (process.client) {
+        anime({
+          targets: document.querySelector('footer'),
+          opacity: 0,
+          duration: 100,
+        })
+      }
 
       if (process.client) {
         anime({

@@ -50,6 +50,15 @@
         duration: 700,
         easing: 'easeOutSine'
       })
+
+      if (process.client) {
+        anime({
+          targets: document.querySelector('footer'),
+          opacity: 1,
+          duration: 600,
+          delay: 300,
+        })
+      }
       anime({
         targets: this.$refs.publications,
         translateY: [30, 0],
@@ -60,6 +69,15 @@
       })
     },
     beforeRouteLeave(to, from, next) {
+
+
+      if (process.client) {
+        anime({
+          targets: document.querySelector('footer'),
+          opacity: 0,
+          duration: 100,
+        })
+      }
       anime({
         targets: this.$refs.title.$el,
         translateX: [0, 30],
