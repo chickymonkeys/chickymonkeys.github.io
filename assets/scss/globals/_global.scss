@@ -17,6 +17,10 @@ body {
   min-height: 100%;
   display: flex;
   width: 100%;
+
+  @media all and (max-width: 1023px) {
+    overflow: hidden;
+  }
 }
 
 .container {
