@@ -5,35 +5,11 @@
       <div class="publication" ref="publications" v-for="res in research" :key="res.title">
         <div class="title-container">
           <div class="title small">{{res.title}}</div>
-          <div class="coauthors" v-if="res.coauthors">
+          <div class="coauthors  copy small" v-if="res.coauthors">
+            with
             <span class="coauthor" v-for="(c, index) in res.coauthors" :key="c.name">
-              <span v-if="c.coauthor.name && index == 0 & index != res.coauthors.length - 1">
-                with
-                <span v-if="c.coauthor.link">
-                  <a :href="c.coauthor.link">{{ c.coauthor.name }}</a>,
-                </span>
-                <span v-if="!c.coauthor.link">{{ c.coauthor.name }},</span>
-              </span>
-              <span v-if="c.coauthor.name && index > 0 && index != res.coauthors.length - 1">
-                <span v-if="c.coauthor.link">
-                  <a :href="c.coauthor.link">{{ c.coauthor.name }}</a>,
-                </span>
-                <span v-if="!c.coauthor.link">{{ c.coauthor.name }},</span>
-              </span>
-              <span v-if="c.coauthor.name && index > 0 && index == res.coauthors.length - 1">
-                and
-                <span v-if="c.coauthor.link">
-                  <a :href="c.coauthor.link">{{ c.coauthor.name }}</a>
-                </span>
-                <span v-if="!c.coauthor.link">{{ c.coauthor.name }}</span>
-              </span>
-              <span v-if="c.coauthor.name && index == 0 && index == res.coauthors.length - 1">
-                with
-                <span v-if="c.coauthor.link">
-                  <a :href="c.coauthor.link">{{ c.coauthor.name }}</a>
-                </span>
-                <span v-if="!c.coauthor.link">{{ c.coauthor.name }}</span>
-              </span>
+              <a v-if="c.coauthor.link" :href="c.coauthor.link">{{ c.coauthor.name }}</a>
+              <span v-else>{{ c.coauthor.name }}</span>{{ getLigature(res.coauthors, index) }}
             </span>
           </div>
         </div>
@@ -63,6 +39,18 @@ export default {
   head () {
     return {
       title: `Research`,
+    }
+  },
+  methods: {
+    getLigature(a, i) {
+      if (a.length === 1) { // single co-author case
+        return '.'
+      } else { // more than one co-authors cases
+        if (i < (a.length - 2)) return ', '
+        if (i === (a.length - 2)) return ' and '
+        // in any other case
+        return '.'
+      }
     }
   },
   mounted() {

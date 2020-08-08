@@ -56,11 +56,13 @@ footer {
     transform: translate3d(76vw, 90vh, 0);
     top: 0;
     left: 0;
+    position: fixed;
   }
 
   .index & {
     @media all and (min-width: 769px) {
       transform: translate3d(62vw, 51vw, 0);
+      position: absolute;
     }
   }
 

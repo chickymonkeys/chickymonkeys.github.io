@@ -67,6 +67,13 @@
       const copy = this.$refs.copy
       const image = this.$refs.image
 
+      if (process.client) {
+        anime({
+          targets: document.body,
+          scrollTop: 0,
+          duration: 100,
+        })
+      }
 
       anime( {
         targets: title,
