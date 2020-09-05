@@ -57,6 +57,7 @@ export default {
   */
   modules: [
     '@nuxt/content',
+    '@nuxt/sitemap',
   ],
 
   content: {
