@@ -60,6 +60,10 @@ export default {
     '@nuxtjs/sitemap'
   ],
 
+  sitemap: {
+    hostname: 'https://pizzigolot.to',
+  },
+
   content: {
     // Options
   },
