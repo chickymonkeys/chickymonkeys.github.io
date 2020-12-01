@@ -1,37 +1,46 @@
 <template>
   <div class="header">
-    <div class="row centered disappear" :class="{ 'secondaryPage': notHomepage }">
+    <div class="row centered disappear" :class="{ secondaryPage: notHomepage }">
       <nuxt-link to="/" class="pizzi-smol">
         <img src="/img/pizziboi.png" alt="Alessandro Pizzigolotto" /> AP
       </nuxt-link>
     </div>
     <div class="row">
       <nav>
-        <nuxt-link :class="{ active: $route.path === '/' }" to="/">home</nuxt-link>
-        <nuxt-link :class="{ active: $route.path === '/research' }" to="/research">research</nuxt-link>
+        <nuxt-link :class="{ active: $route.path === '/' }" to="/"
+          >home</nuxt-link
+        >
+        <nuxt-link
+          :class="{ active: $route.path === '/research' }"
+          to="/research"
+          >research</nuxt-link
+        >
         <a
-          href="https://mega.nz/file/IGZQzIYL#rc3yMQ1dcYHXTiXk4UZe9oHcSKXTcPs3iBW5dUrhoIc"
+          href="https://mega.nz/file/IO4mWCJD#2fVxG3TS3PRiLtZK5X33u4_woZXEbBvxWO15IgPaR68"
           target="_blank"
-        >cv</a>
-        <nuxt-link :class="{ active: $route.path === '/teaching' }" to="/teaching">teaching</nuxt-link>
+          >cv</a
+        >
+        <nuxt-link
+          :class="{ active: $route.path === '/teaching' }"
+          to="/teaching"
+          >teaching</nuxt-link
+        >
       </nav>
-      <a
-        href="mailto:alessandro.pizzigolotto@nhh.no"
-        class="mail-link"
-      >alessandro.pizzigolotto@nhh.no</a>
+      <a href="mailto:alessandro.pizzigolotto@nhh.no" class="mail-link"
+        >alessandro.pizzigolotto@nhh.no</a
+      >
     </div>
   </div>
 </template>
 
 <script>
-  export default {
-    computed: {
-      notHomepage () {
-        return this.$route.path !== "/"
-      }
-    }
-
-  }
+export default {
+  computed: {
+    notHomepage() {
+      return this.$route.path !== '/'
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
