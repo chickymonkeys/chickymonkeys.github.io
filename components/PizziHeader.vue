@@ -16,7 +16,7 @@
           >research</nuxt-link
         >
         <a
-          href="https://mega.nz/file/IO4mWCJD#2fVxG3TS3PRiLtZK5X33u4_woZXEbBvxWO15IgPaR68"
+          href="https://drive.google.com/file/d/1rFANzsGzoaKjG1n8ou5muWkFULHUgNgH/view?usp=sharing"
           target="_blank"
           >cv</a
         >
