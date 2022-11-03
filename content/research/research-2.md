@@ -1,12 +1,10 @@
 ---
-title:      "Credit Shocks and Populism"
+title:      "Credit Shocks and Populism (Job Market Paper)"
 coauthors:
 - coauthor: 
     name:   "Nicolò Fraccaroli"
     link:   "https://sites.google.com/view/nfraccaroli/home"
-date:       "2021-07"
+date:       "2022-10"
 ---
 
-<!-- Do banking crises fuel populism? While scholars identified the economic causes of populism in trade, unemployment, or migration, the evidence on the role of banks is scant. In this paper we aim to fill this gap. We investigate whether lending cuts by banks increase the electoral support for populist parties. To this end, we exploit the impact of an exogenous lending cut by a large German bank in 2007-08 on the voting behaviour of individuals set in counties exposed to the cut. We combine this data with SOEP data on individual voting intentions for populist parties. Based on this strategy, our paper shows new empirical evidence on the causal effect of banking crises on individuals’ political attitudes. -->
-
-We investigate whether credit shocks increase the electoral support for populist parties. To this end, we exploit the impact of an exogenous lending cut by a large German bank in 2007-08 on the voting behaviour of individuals settled in counties exposed to the cut. We measure voting intentions using individual-level survey data. We identify the degree of populism over time using a semi-supervised machine learning approach applied to the parliamentary speeches of each party. We find that exposure to the credit shock increases voters' support for parties that are populist, that adopt a populist rhetoric and that discuss more frequently bank-related topics. Overall, our evidence show that credit shocks favour the growth of populism.
+We investigate whether credit shocks affect the electoral support for populist parties. Our empirical approach exploits the spatial variation in exposure to an exogenous lending cut by a large German bank in 2007-08. Looking at voting intentions from individual-level survey data, we find that the exposure to the credit shock leads to a persistent increase in populist political preferences. To explore the shift in demand for populism activated by the shock, we measure the degree of populist rhetoric and the salience of bank-related topics of each party over time using a machine learning procedure on the corpus of parliamentary speeches in Germany. We find that the credit shock rewards parties that adopt a more populist rhetoric and discuss bank-related topics more frequently. County-level aggregate analysis suggests that the perceived decay of the local economy - a result of the credit shock - is reflected through expressions of discontent in voters' political preferences. Individual level analysis of the causal effects of the credit shock suggests that the labour market history is the most important factor in shaping the response in populist preferences. Overall, we add to the literature on the financial drivers of populism, concluding that credit shocks are an important determinant of the recent rise of populism.
