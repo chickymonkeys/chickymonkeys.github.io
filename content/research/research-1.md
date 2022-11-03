@@ -5,7 +5,7 @@ links:
   - label: "Paper"
     link: "https://www.google.it"
   - label: "Nudes"
-    link: "https://www.google.it"
+    link: "/img/pizzinudes.jpg"
   - label: "OnlyFans"
     link: "https://www.google.it"
 coauthors:

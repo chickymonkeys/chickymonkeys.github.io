@@ -14,7 +14,7 @@
             </span>
           </div>
           <div class="links" v-if="res.links && res.links.length" ref="links">
-            <a class="link" v-for="link in res.links" :href="link.link">{{ link.label }}</a>
+            <a class="link" target="_blank" v-for="link in res.links" :href="link.link">{{ link.label }}</a>
           </div>
         </div>
         <div class="copy small">
