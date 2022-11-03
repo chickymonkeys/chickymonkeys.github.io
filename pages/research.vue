@@ -4,7 +4,8 @@
     <div class="fl-column aself-start standard-padding">
       <div class="publication" ref="publications" v-for="res in research" :key="res.title">
         <div class="title-container">
-          <div class="title small">{{ res.title }}</div>
+          <component :is="res.title_link ? 'a' : 'div'" :href="res.title_link ? res.title_link : null"
+            class="title small">{{ res.title }}</component>
           <div class="coauthors copy small" v-if="res.coauthors">
             with
             <span class="coauthor" v-for="(c, index) in res.coauthors" :key="c.name">
