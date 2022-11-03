@@ -4,13 +4,16 @@
     <div class="fl-column aself-start standard-padding">
       <div class="publication" ref="publications" v-for="res in research" :key="res.title">
         <div class="title-container">
-          <div class="title small">{{res.title}}</div>
-          <div class="coauthors  copy small" v-if="res.coauthors">
+          <div class="title small">{{ res.title }}</div>
+          <div class="coauthors copy small" v-if="res.coauthors">
             with
             <span class="coauthor" v-for="(c, index) in res.coauthors" :key="c.name">
               <a v-if="c.coauthor.link" :href="c.coauthor.link">{{ c.coauthor.name }}</a>
               <span v-else>{{ c.coauthor.name }}</span>{{ getLigature(res.coauthors, index) }}
             </span>
+          </div>
+          <div class="links" v-if="res.links && res.links.length" ref="links">
+            <a class="link" v-for="link in res.links" :href="link.link">{{ link.label }}</a>
           </div>
         </div>
         <div class="copy small">
@@ -30,13 +33,13 @@ export default {
   components: {
     PageTitle
   },
-  async asyncData ({ $content }) {
-  const research = await $content('research').sortBy('date','desc').fetch()
+  async asyncData({ $content }) {
+    const research = await $content('research').sortBy('date', 'desc').fetch()
     return {
       research
     }
   },
-  head () {
+  head() {
     return {
       title: `Research`,
     }
@@ -128,7 +131,7 @@ export default {
   padding: 10vw 0;
   box-sizing: border-box;
 
-  > div {
+  >div {
     align-items: center;
   }
 }
@@ -153,6 +156,31 @@ export default {
 
   @media all and (max-width: 768px) {
     padding-right: 0;
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+  gap: 12px;
+  font-size: 14px;
+
+  .link {
+    padding: 5px 14px;
+    border-radius: 2em;
+    background-color: $tertiary;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.25s ease-out;
+
+    &:hover {
+      color: $secondary;
+      background-color: $primary;
+    }
   }
 }
 
