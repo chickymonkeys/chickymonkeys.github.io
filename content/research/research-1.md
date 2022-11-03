@@ -1,13 +1,5 @@
 ---
 title: "Learning from a Systemic Banking Crisis' Experience: The Long-Run Impact on Borrowing Behavior"
-title_link: "https://www.google.it"
-links:
-  - label: "Paper"
-    link: "https://www.google.it"
-  - label: "Nudes"
-    link: "/img/pizzinudes.jpg"
-  - label: "OnlyFans"
-    link: "https://www.google.it"
 coauthors:
 - coauthor: 
     name:   "Nicolò Fraccaroli"
