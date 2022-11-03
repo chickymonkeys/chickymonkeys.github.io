@@ -1,5 +1,9 @@
 ---
 title:      "Credit Shocks and Populism (Job Market Paper)"
+title_link: "/files/FP_CreditPopulism_Draft.pdf"
+links:
+  - label: "Draft"
+    link: "/files/FP_CreditPopulism_Draft.pdf"
 coauthors:
 - coauthor: 
     name:   "Nicolò Fraccaroli"

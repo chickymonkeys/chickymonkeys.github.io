@@ -16,7 +16,7 @@
           >research</nuxt-link
         >
         <a
-          href="https://drive.google.com/file/d/1rFANzsGzoaKjG1n8ou5muWkFULHUgNgH/view?usp=sharing"
+          href="/files/Pizzigolotto_CV.pdf"
           target="_blank"
           >cv</a
         >
