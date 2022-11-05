@@ -6,6 +6,6 @@ keywords: phd candidate, research, economics, political economy, culture, househ
 
 Welcome to my website! I am currently a Doctoral Candidate at the [Department of Economics](https://www.nhh.no/en/departments/economics/) of the [Norwegian School of Economics (NHH)](https://www.nhh.no/en/). I am also affiliated with the [Centre for Empirical Labor Economics (FAIR-CELE)](https://www.nhh.no/en/research-centres/fair/).
 
-My research focuses on the use of rigorous causal identification and data science techniques to investigate on topics at the intersection of Political Economy, Finance and Labour Economics.
+My research focuses on the use of micro-econometric tools and data science techniques to investigate on topics at the intersection of Political Economy, Finance and Labour Economics.
 
 I am on the 2022-23 academic job market and will be available for interviews.

@@ -15,12 +15,12 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    titleTemplate: '%s - Alessandro Pizzigolotto',
+    titleTemplate: 'Alessandro Pizzigolotto `%s',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'keywords', content: 'alessandro pizzigolotto, economics, phd, student, microeconomics, culture, household finance, political economy, institutions' },
-      { hid: 'description', name: 'description', content: 'Alessandro Pizzigolotto\'s Website' }
+      { name: 'keywords', content: 'alessandro pizzigolotto, economics, phd, microeconomics, culture, household finance, political economy, institutions, econometrics' },
+      { hid: 'description', name: 'description', content: 'Alessandro Pizzigolotto\'s AcademicWebsite' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
