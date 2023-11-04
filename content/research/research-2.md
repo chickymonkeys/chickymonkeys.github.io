@@ -1,5 +1,5 @@
 ---
-title:      "Credit Shocks and Populism (Job Market Paper)"
+title:      "Credit Shocks and Populism"
 title_link: "/files/FP_CreditPopulism_Manuscript.pdf"
 links:
   - label: "Draft"

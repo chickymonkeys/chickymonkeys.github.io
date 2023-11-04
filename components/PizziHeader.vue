@@ -26,8 +26,8 @@
           >teaching</nuxt-link
         >
       </nav>
-      <a href="mailto:alessandro.pizzigolotto@nhh.no" class="mail-link"
-        >alessandro.pizzigolotto@nhh.no</a
+      <a href="mailto:alpi@econ.ku.dk" class="mail-link"
+        >alpi@econ.ku.dk</a
       >
     </div>
   </div>
