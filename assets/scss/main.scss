@@ -1,0 +1,7 @@
+// normalize
+@import 'normalize-scss/sass/normalize/import-now';
+// variables and fonts
+@import './globals/colors';
+@import './globals/typography';
+// global styles
+@import './globals/global';
