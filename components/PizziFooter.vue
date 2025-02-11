@@ -4,6 +4,7 @@
     <a
       class="icon"
       href="http://github.com/chickymonkeys/"
+      aria-label="Github profile"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -20,6 +21,7 @@
     <a
       class="icon"
       href="https://www.linkedin.com/in/alessandropizzigolotto"
+      aria-label="Linkedin profile"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +38,7 @@
     <a
       class="icon"
       href="https://twitter.com/chickymonkeys"
+      aria-label="Twitter profile"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -52,6 +55,7 @@
     <a
       class="icon hidden-desktop"
       href="mailto:alpi@econ.ku.dk"
+      aria-label="Email me at alpi@econ.ku.dk"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
