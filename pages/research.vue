@@ -67,8 +67,14 @@
 <script setup lang="ts">
 import anime from 'animejs'
 
-const { data: research } = await useAsyncData('research', () => {
-  return queryCollection('research').all()
+const { data: research } = await useAsyncData('research', async () => {
+  const qCollection = await queryCollection('research').all()
+  return qCollection.sort((a, b) => {
+    const dateA = new Date(a.meta.date ?? '1970-01-01')
+    const dateB = new Date(b.meta.date ?? '1970-01-01')
+
+    return dateB.getTime() - dateA.getTime()
+  })
 })
 useHead({
   title: `Research`,

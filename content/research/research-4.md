@@ -10,7 +10,7 @@ coauthors:
 - coauthor: 
     name:   "Jósef Sigurdsson"
     link:   "https://www.josefsigurdsson.com/"
-date:       "2023-05"
+date:       "2023-05-01"
 ---
 
 _New abstract and draft available soon!_
