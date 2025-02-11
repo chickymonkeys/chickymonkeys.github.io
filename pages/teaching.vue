@@ -36,8 +36,14 @@ useHead({
   title: 'Teaching',
 })
 
-const { data: teaching } = await useAsyncData('teaching', () => {
-  return queryCollection('teaching').all()
+const { data: teaching } = await useAsyncData('teaching', async () => {
+  const qCollection = await queryCollection('teaching').all()
+  return qCollection.sort((a, b) => {
+    const dateA = new Date(a.meta.date ?? '1970-01-01')
+    const dateB = new Date(b.meta.date ?? '1970-01-01')
+
+    return dateB.getTime() - dateA.getTime()
+  })
 })
 
 onMounted(() => {

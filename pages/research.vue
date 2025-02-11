@@ -1,70 +1,78 @@
 <template>
   <div>
-    <PageTitle>Research</PageTitle>
     <div class="fl-column aself-start standard-padding">
-      <Motion
-        v-for="(res) in research"
-        :key="res.title"
-        class="publication"
-        :initial="{ opacity: 0, y: 30 }"
-        :in-view="{ opacity: 1, y: 0 }"
-        :in-view-options="{ once: true, amount: 'some' }"
-        :transition="{ duration: 0.9 }"
+      <div
+        v-for="([resType, resArr]) in Object.entries(research!)"
+        :key="resType"
       >
-        <div class="title-container">
-          <component
-            :is="res.meta.title_link ? 'a' : 'div'"
-            :href="res.meta.title_link ? res.meta.title_link : null"
-            class="title small"
-          >
-            {{ res.title }}
-          </component>
-          <div
-            v-if="res.meta.coauthors"
-            class="coauthors copy small"
-          >
-            with
-            <span
-              v-for="(c, index) in res.meta.coauthors"
-              :key="c.coauthor.name"
-              class="coauthor"
+        <PageTitle style="margin-left: 0; padding-left: 0;">
+          {{ resType }}
+        </PageTitle>
+        <Motion
+          v-for="(res) in resArr"
+          :key="res.title"
+          class="publication"
+          :initial="{ opacity: 0, y: 30 }"
+          :in-view="{ opacity: 1, y: 0 }"
+          :in-view-options="{ once: true, amount: 'some' }"
+          :transition="{ duration: 0.9 }"
+        >
+          <div class="title-container">
+            <component
+              :is="res.meta.title_link ? 'a' : 'div'"
+              :href="res.meta.title_link ? res.meta.title_link : null"
+              class="title small"
+            >
+              {{ res.title }}
+            </component>
+            <div
+              v-if="res.meta.coauthors"
+              class="coauthors copy small"
+            >
+              with
+              <span
+                v-for="(c, index) in res.meta.coauthors"
+                :key="c.coauthor.name"
+                class="coauthor"
+              >
+                <a
+                  v-if="c.coauthor.link"
+                  :href="c.coauthor.link"
+                >{{ c.coauthor.name }}</a>
+                <span v-else>{{ c.coauthor.name }}</span>{{ getLigature(res.meta.coauthors, index) }}
+              </span>
+            </div>
+            <div
+              v-if="res.meta.links && res.meta.links.length"
+              ref="links"
+              class="links"
             >
               <a
-                v-if="c.coauthor.link"
-                :href="c.coauthor.link"
-              >{{ c.coauthor.name }}</a>
-              <span v-else>{{ c.coauthor.name }}</span>{{ getLigature(res.meta.coauthors, index) }}
-            </span>
+                v-for="link in res.meta.links"
+                :key="link.link"
+                class="link"
+                target="_blank"
+                :href="link.link"
+              >{{
+                link.label }}</a>
+            </div>
           </div>
-          <div
-            v-if="res.meta.links && res.meta.links.length"
-            ref="links"
-            class="links"
-          >
-            <a
-              v-for="link in res.meta.links"
-              :key="link.link"
-              class="link"
-              target="_blank"
-              :href="link.link"
-            >{{
-              link.label }}</a>
+          <div class="copy small">
+            <ContentRenderer :value="res" />
           </div>
-        </div>
-        <div class="copy small">
-          <ContentRenderer :value="res" />
-        </div>
-        <a
-          v-if="res.meta.cta"
-          class="external copy small"
-          :href="res.meta.cta"
-        >Read Me</a>
-      </Motion>
+          <a
+            v-if="res.meta.cta"
+            class="external copy small"
+            :href="res.meta.cta"
+          >Read Me</a>
+        </Motion>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { ResearchCollectionItem } from '@nuxt/content'
 import anime from 'animejs'
 
 const { data: research } = await useAsyncData('research', async () => {
@@ -74,7 +82,11 @@ const { data: research } = await useAsyncData('research', async () => {
     const dateB = new Date(b.meta.date ?? '1970-01-01')
 
     return dateB.getTime() - dateA.getTime()
-  })
+  }).reduce((acc: Record<string, ResearchCollectionItem[]>, v) => {
+    acc[v.meta.type] ??= []
+    acc[v.meta.type].push(v)
+    return acc
+  }, {})
 })
 useHead({
   title: `Research`,
