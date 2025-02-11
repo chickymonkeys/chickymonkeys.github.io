@@ -2,11 +2,14 @@
   <div>
     <div class="fl-column aself-start standard-padding">
       <div
-        v-for="([resType, resArr]) in Object.entries(research!)"
+        v-for="([resType, resArr], i) in Object.entries(research!)"
         :key="resType"
       >
-        <PageTitle style="margin-left: 0; padding-left: 0;">
-          {{ resType }}
+        <PageTitle
+          class="res-page-title"
+          :class="{ first: i === 0 }"
+        >
+          {{ resType }}:
         </PageTitle>
         <Motion
           v-for="(res) in resArr"
@@ -122,13 +125,18 @@ onMounted(() => {
 @import '@/assets/scss/variables';
 
 .publication {
-  border-bottom: 2px solid $plain-text;
-  padding: 3vw 0 1.5vw;
+  padding: 0 0 1.5vw;
   width: 100%;
   opacity: 0;
+  margin: 2vw 0;
 
   @media all and (max-width: 768px) {
-    padding: 6vw 0 3vw;
+    padding: 0 0 3vw;
+    margin: 4vw 0;
+  }
+
+  &:last-child {
+    border-bottom: 2px solid $plain-text;
   }
 }
 
@@ -212,6 +220,25 @@ onMounted(() => {
   &:hover {
     background-color: $plain-text;
     color: $secondary;
+  }
+}
+
+.res-page-title {
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 4vw;
+  margin-top: 0;
+
+  @media all and (max-width: 768px) {
+    margin-bottom: 6vw;
+
+    &.first {
+      margin-top: 4vw;
+    }
+  }
+
+  &.first {
+    margin-top: 2vw;
   }
 }
 </style>
