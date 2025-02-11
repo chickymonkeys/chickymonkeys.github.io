@@ -12,6 +12,7 @@
         <NuxtImg
           src="/img/pizziboi.png"
           alt="Alessandro Pizzigolotto"
+          sizes="sm:15vw md:15vw lg:6vw xl:6vw"
         /> AP
       </NuxtLink>
     </div>
@@ -26,7 +27,8 @@
           :class="{ active: $route.path === '/research' }"
           to="/research"
           aria-label="Research page"
-        >research</NuxtLink>
+        >research
+        </NuxtLink>
         <a
           href="/files/Pizzigolotto_CV.pdf"
           target="_blank"
@@ -35,7 +37,8 @@
           :class="{ active: $route.path === '/teaching' }"
           to="/teaching"
           aria-label="Teaching page"
-        >teaching</NuxtLink>
+        >teaching
+        </NuxtLink>
       </nav>
       <a
         href="mailto:alpi@econ.ku.dk"
