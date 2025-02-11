@@ -12,6 +12,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'en',
+      },
       titleTemplate: 'Alessandro Pizzigolotto: %s',
       meta: [
         { charset: 'utf-8' },
@@ -60,5 +63,14 @@ export default defineNuxtConfig({
   },
   gtag: {
     id: 'G-8KX8483ME2',
+  },
+  image: {
+    provider: 'ipx',
+    format: ['avif', 'webp'],
+    ipx: {
+      modifiers: {
+        format: 'webp',
+      },
+    },
   },
 })

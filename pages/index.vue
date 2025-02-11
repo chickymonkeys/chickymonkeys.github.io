@@ -29,6 +29,9 @@
           src="/img/pizziboi.png"
           sizes="sm:23vw md:28vw lg:28vw xl:28vw"
           alt="pizziboi status symbol"
+          preload
+          placeholder
+          :modifiers="{ format: 'webp' }"
         />
       </div>
     </div>

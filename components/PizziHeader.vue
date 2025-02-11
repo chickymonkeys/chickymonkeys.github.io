@@ -7,11 +7,12 @@
       <NuxtLink
         to="/"
         class="pizzi-smol"
+        aria-label="Go to homepage"
       >
-        <img
+        <NuxtImg
           src="/img/pizziboi.png"
           alt="Alessandro Pizzigolotto"
-        > AP
+        /> AP
       </NuxtLink>
     </div>
     <div class="row">
@@ -19,10 +20,12 @@
         <NuxtLink
           :class="{ active: $route.path === '/' }"
           to="/"
+          aria-label="Go to homepage desktop"
         >home</NuxtLink>
         <NuxtLink
           :class="{ active: $route.path === '/research' }"
           to="/research"
+          aria-label="Research page"
         >research</NuxtLink>
         <a
           href="/files/Pizzigolotto_CV.pdf"
@@ -31,11 +34,13 @@
         <NuxtLink
           :class="{ active: $route.path === '/teaching' }"
           to="/teaching"
+          aria-label="Teaching page"
         >teaching</NuxtLink>
       </nav>
       <a
         href="mailto:alpi@econ.ku.dk"
         class="mail-link"
+        aria-label="Write me an email"
       >alpi@econ.ku.dk</a>
     </div>
   </div>
