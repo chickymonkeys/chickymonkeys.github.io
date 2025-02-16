@@ -60,6 +60,18 @@
                 link.label }}</a>
             </div>
           </div>
+          <!-- NEW SUBSECTION START -->
+          <div class="pre-abstract" v-if="res.meta.infos && res.meta.infos.length">
+            <div
+              v-for="info in res.meta.infos"
+              :key="info.info"
+              class="info"
+            >
+              <!-- <ContentRendererMarkdown :value="item.info" /> -->
+              {{ info.info }}
+            </div>
+          </div>
+          <!-- NEW SUBSECTION END -->
           <div class="copy small">
             <ContentRenderer :value="res" />
           </div>
