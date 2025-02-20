@@ -12,10 +12,6 @@ coauthors:
     link:   "https://www.josefsigurdsson.com/"
 date:       "2023-05-01"
 type: "Work in Progress"
+infos:
+  - info: "_New abstract and draft available soon!_"
 ---
-
-<!--
-
-_New abstract and draft available soon!_
-
--->
