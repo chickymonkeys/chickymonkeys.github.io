@@ -1,80 +1,107 @@
 <template>
   <div>
-    <PageTitle>Research</PageTitle>
     <div class="fl-column aself-start standard-padding">
-      <Motion
-        v-for="(res) in research"
-        :key="res.title"
-        class="publication"
-        :initial="{ opacity: 0, y: 30 }"
-        :in-view="{ opacity: 1, y: 0 }"
-        :in-view-options="{ once: true, amount: 'some' }"
-        :transition="{ duration: 0.9 }"
+      <div
+        v-for="([resType, resArr], i) in Object.entries(research!)"
+        :key="resType"
       >
-        <div class="title-container">
-          <component
-            :is="res.meta.title_link ? 'a' : 'div'"
-            :href="res.meta.title_link ? res.meta.title_link : null"
-            class="title small"
-          >
-            {{ res.title }}
-          </component>
-          <div
-            v-if="res.meta.coauthors"
-            class="coauthors copy small"
-          >
-            with
-            <span
-              v-for="(c, index) in res.meta.coauthors"
-              :key="c.coauthor.name"
-              class="coauthor"
+        <PageTitle
+          class="res-page-title"
+          :class="{ first: i === 0 }"
+        >
+          {{ resType }}:
+        </PageTitle>
+        <Motion
+          v-for="(res) in resArr"
+          :key="res.title"
+          class="publication"
+          :initial="{ opacity: 0, y: 30 }"
+          :in-view="{ opacity: 1, y: 0 }"
+          :in-view-options="{ once: true, amount: 'some' }"
+          :transition="{ duration: 0.9 }"
+        >
+          <div class="title-container">
+            <component
+              :is="res.meta.title_link ? 'a' : 'div'"
+              :href="res.meta.title_link ? res.meta.title_link : null"
+              class="title small"
+            >
+              {{ res.title }}
+            </component>
+            <div
+              v-if="res.meta.coauthors"
+              class="coauthors copy small"
+            >
+              with
+              <span
+                v-for="(c, index) in res.meta.coauthors"
+                :key="c.coauthor.name"
+                class="coauthor"
+              >
+                <a
+                  v-if="c.coauthor.link"
+                  :href="c.coauthor.link"
+                >{{ c.coauthor.name }}</a>
+                <span v-else>{{ c.coauthor.name }}</span>{{ getLigature(res.meta.coauthors, index) }}
+              </span>
+            </div>
+            <div
+              v-if="res.meta.links && res.meta.links.length"
+              ref="links"
+              class="links"
             >
               <a
-                v-if="c.coauthor.link"
-                :href="c.coauthor.link"
-              >{{ c.coauthor.name }}</a>
-              <span v-else>{{ c.coauthor.name }}</span>{{ getLigature(res.meta.coauthors, index) }}
-            </span>
+                v-for="link in res.meta.links"
+                :key="link.link"
+                class="link"
+                target="_blank"
+                :href="link.link"
+              >{{
+                link.label }}</a>
+            </div>
           </div>
-          <div
-            v-if="res.meta.links && res.meta.links.length"
-            ref="links"
-            class="links"
-          >
-            <a
-              v-for="link in res.meta.links"
-              :key="link.link"
-              class="link"
-              target="_blank"
-              :href="link.link"
-            >{{
-              link.label }}</a>
+          <div class="paper-infos copy small" v-if="res.meta.infos && res.meta.infos.length">
+            <div
+              v-for="info in res.meta.infos"
+              :key="info.info"
+              class="paper-info"
+            >
+            <MDC :value="info.info" tag="div" />
+            </div>
           </div>
-        </div>
-        <div class="copy small">
-          <ContentRenderer :value="res" />
-        </div>
-        <a
-          v-if="res.meta.cta"
-          class="external copy small"
-          :href="res.meta.cta"
-        >Read Me</a>
-      </Motion>
+          <div class="copy small">
+            <ContentRenderer :value="res" />
+          </div>
+          <a
+            v-if="res.meta.cta"
+            class="external copy small"
+            :href="res.meta.cta"
+          >Read Me</a>
+        </Motion>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { ResearchCollectionItem } from '@nuxt/content'
 import anime from 'animejs'
 
 const { data: research } = await useAsyncData('research', async () => {
   const qCollection = await queryCollection('research').all()
+  const typeOrder = ['Publications', 'Working Papers', 'Work in Progress']
   return qCollection.sort((a, b) => {
     const dateA = new Date(a.meta.date ?? '1970-01-01')
     const dateB = new Date(b.meta.date ?? '1970-01-01')
-
+    if (a.meta.type !== b.meta.type) {
+      return typeOrder.indexOf(a.meta.type) - typeOrder.indexOf(b.meta.type)
+    }
     return dateB.getTime() - dateA.getTime()
-  })
+  }).reduce((acc: Record<string, ResearchCollectionItem[]>, v) => {
+    acc[v.meta.type] ??= []
+    acc[v.meta.type].push(v)
+    return acc
+  }, {})
 })
 useHead({
   title: `Research`,
@@ -110,13 +137,18 @@ onMounted(() => {
 @import '@/assets/scss/variables';
 
 .publication {
-  border-bottom: 2px solid $plain-text;
-  padding: 3vw 0 1.5vw;
+  padding: 0 0 1.5vw;
   width: 100%;
   opacity: 0;
+  margin: 2vw 0;
 
   @media all and (max-width: 768px) {
-    padding: 6vw 0 3vw;
+    padding: 0 0 3vw;
+    margin: 4vw 0;
+  }
+
+  &:last-child {
+    border-bottom: 2px solid $plain-text;
   }
 }
 
@@ -200,6 +232,25 @@ onMounted(() => {
   &:hover {
     background-color: $plain-text;
     color: $secondary;
+  }
+}
+
+.res-page-title {
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 4vw;
+  margin-top: 0;
+
+  @media all and (max-width: 768px) {
+    margin-bottom: 6vw;
+
+    &.first {
+      margin-top: 4vw;
+    }
+  }
+
+  &.first {
+    margin-top: 2vw;
   }
 }
 </style>

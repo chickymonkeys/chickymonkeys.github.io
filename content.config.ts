@@ -26,6 +26,10 @@ export default defineContentConfig({
           })),
           cta: z.string().optional(),
           date: z.string().optional(),
+          type: z.string(),
+          infos: z.array(z.object({
+            info: z.string(),
+          })).optional(),
         }),
       }),
       source: 'research/*.md',

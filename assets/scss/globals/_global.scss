@@ -81,7 +81,7 @@ body {
   letter-spacing: 0.01em;
 
   &.small {
-    font-size: 3vw;
+    font-size: 2.8vw;
 
     @media all and (max-width: 768px) {
       font-size: 6vw;
@@ -177,5 +177,17 @@ body {
 
   @media all and (max-width: 768px) {
     flex: 1 1 auto;
+  }
+}
+
+.paper-info {
+  > div,
+  p {
+    margin: 0;
+    margin-bottom: 0.5vw;
+  }
+
+  strong {
+    font-weight: bold;
   }
 }
