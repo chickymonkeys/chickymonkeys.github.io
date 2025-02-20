@@ -60,18 +60,15 @@
                 link.label }}</a>
             </div>
           </div>
-          <!-- NEW SUBSECTION START -->
-          <div class="pre-abstract" v-if="res.meta.infos && res.meta.infos.length">
+          <div class="paper-infos copy small" v-if="res.meta.infos && res.meta.infos.length">
             <div
               v-for="info in res.meta.infos"
               :key="info.info"
-              class="info"
+              class="paper-info"
             >
-              <!-- <ContentRendererMarkdown :value="item.info" /> -->
-              {{ info.info }}
+            <MDC :value="info.info" tag="div" />
             </div>
           </div>
-          <!-- NEW SUBSECTION END -->
           <div class="copy small">
             <ContentRenderer :value="res" />
           </div>
@@ -92,10 +89,13 @@ import anime from 'animejs'
 
 const { data: research } = await useAsyncData('research', async () => {
   const qCollection = await queryCollection('research').all()
+  const typeOrder = ['Publications', 'Working Papers', 'Work in Progress']
   return qCollection.sort((a, b) => {
     const dateA = new Date(a.meta.date ?? '1970-01-01')
     const dateB = new Date(b.meta.date ?? '1970-01-01')
-
+    if (a.meta.type !== b.meta.type) {
+      return typeOrder.indexOf(a.meta.type) - typeOrder.indexOf(b.meta.type)
+    }
     return dateB.getTime() - dateA.getTime()
   }).reduce((acc: Record<string, ResearchCollectionItem[]>, v) => {
     acc[v.meta.type] ??= []

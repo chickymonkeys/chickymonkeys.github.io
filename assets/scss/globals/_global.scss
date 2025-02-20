@@ -179,3 +179,15 @@ body {
     flex: 1 1 auto;
   }
 }
+
+.paper-info {
+  > div,
+  p {
+    margin: 0;
+    margin-bottom: 0.5vw;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+}

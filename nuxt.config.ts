@@ -1,14 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/content',
-    'motion-v/nuxt',
-    'nuxt-gtag',
-    '@nuxtjs/sitemap',
-    '@nuxt/fonts',
-    '@nuxt/image',
-    '@nuxt/eslint',
-  ],
+  modules: ['@nuxt/content', 'motion-v/nuxt', 'nuxt-gtag', '@nuxtjs/sitemap', '@nuxt/fonts', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/mdc'],
   devtools: { enabled: true },
   app: {
     head: {
