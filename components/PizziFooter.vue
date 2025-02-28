@@ -17,10 +17,10 @@
         />
       </svg>
     </a>
-    <!-- Bluesky -->
+    <!-- bluesky -->
     <a
       class="icon"
-      href="https://bsky.app/profile/chickymonkeys.bsky.social"
+      href="https://bsky.app/profile/pizzigolot.to"
       aria-label="Twitter profile"
     >
       <svg
