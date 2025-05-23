@@ -184,6 +184,10 @@ onMounted(() => {
   }
 }
 
+.coauthors {
+ padding-top: 0.5vw; 
+}
+
 .links {
   display: flex;
   flex-direction: row;

@@ -116,7 +116,7 @@ footer {
 
   .index & {
     @media all and (min-width: 769px) {
-      transform: translate3d(56vw, 51vw, 0);
+      transform: translate3d(56vw, 50vw, 0);
       position: absolute;
     }
   }

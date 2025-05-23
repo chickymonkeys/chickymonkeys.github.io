@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/content', 'motion-v/nuxt', 'nuxt-gtag', '@nuxtjs/sitemap', '@nuxt/fonts', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/mdc'],
+  modules: ['@nuxtjs/sitemap', '@nuxt/content', 'motion-v/nuxt', 'nuxt-gtag', '@nuxt/fonts', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/mdc'],
   devtools: { enabled: true },
   app: {
     head: {
@@ -18,7 +18,7 @@ export default defineNuxtConfig({
             `alessandro pizzigolotto, economics, phd, microeconomics, culture, household finance, political economy, institutions, econometrics`,
         },
         {
-          hid: 'description',
+          id: 'description',
           name: 'description',
           content: 'Alessandro Pizzigolotto\'s AcademicWebsite',
         },
