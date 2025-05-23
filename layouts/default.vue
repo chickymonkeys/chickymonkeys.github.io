@@ -59,5 +59,15 @@ onMounted(() => {
       margin-bottom: 4vw;
     }
   }
+
+  .index & {
+    @media all and (min-width: 769px) {
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 0;
+      flex-grow: 0;
+    }
+  }
+
 }
 </style>
