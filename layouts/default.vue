@@ -44,7 +44,7 @@ onMounted(() => {
 .inner-container {
   flex-grow: 2;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
   padding-bottom: 8vw;
