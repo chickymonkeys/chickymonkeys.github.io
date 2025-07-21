@@ -44,7 +44,7 @@ onMounted(() => {
 .inner-container {
   flex-grow: 2;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
   padding-bottom: 8vw;
@@ -59,15 +59,5 @@ onMounted(() => {
       margin-bottom: 4vw;
     }
   }
-
-  .index & {
-    @media all and (min-width: 769px) {
-      justify-content: center;
-      align-items: center;
-      padding-bottom: 0;
-      flex-grow: 0;
-    }
-  }
-
 }
 </style>

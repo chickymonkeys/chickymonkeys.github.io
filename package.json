@@ -14,7 +14,7 @@
   "dependencies": {
     "@nuxt/eslint": "1.2.0",
     "@nuxt/image": "1.10.0",
-    "@nuxtjs/mdc": "0.16.1",
+    "@nuxtjs/mdc": "0.17.2",
     "@nuxtjs/sitemap": "7.2.9",
     "eslint": "^9.27.0",
     "framer-motion": "^12.12.1",
