@@ -15,22 +15,22 @@
     "@nuxt/eslint": "1.2.0",
     "@nuxt/image": "1.10.0",
     "@nuxtjs/mdc": "0.17.2",
-    "@nuxtjs/sitemap": "7.2.9",
-    "eslint": "^9.27.0",
-    "framer-motion": "^12.12.1",
-    "motion-dom": "^12.12.1",
-    "nuxt": "^3.17.4",
+    "@nuxtjs/sitemap": "^7.3.0",
+    "eslint": "^9.31.0",
+    "framer-motion": "^12.23.6",
+    "motion-dom": "^12.23.6",
+    "nuxt": "^3.17.7",
     "nuxt-gtag": "3.0.2",
-    "vue": "^3.5.14",
+    "vue": "^3.5.17",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@nuxt/content": "^3.5.1",
+    "@nuxt/content": "^3.6.3",
     "@nuxt/fonts": "^0.11.4",
     "@types/animejs": "^3.1.13",
     "animejs": "^3.2.2",
-    "motion-v": "^1.1.0-alpha.1",
+    "motion-v": "^1.5.0",
     "normalize-scss": "^8.0.0",
-    "sass-embedded": "^1.89.0"
+    "sass-embedded": "^1.89.2"
   }
 }
