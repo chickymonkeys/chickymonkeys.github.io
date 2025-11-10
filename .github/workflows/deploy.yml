@@ -15,6 +15,10 @@ jobs:
       - run: corepack enable
       - uses: oven-sh/setup-bun@v2
 
+      # Ensure sharp is installed/rebuilt for Linux (IPX needs correct binaries)
+      - run: bun add sharp
+      - run: bun rebuild sharp
+
       - run: bun install
       - run: bun run build
         env:
