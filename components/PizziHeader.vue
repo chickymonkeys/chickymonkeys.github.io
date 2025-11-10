@@ -10,7 +10,7 @@
         aria-label="Go to homepage"
       >
         <NuxtImg
-          src="/img/pizziboi.png"
+          src="/images/pizziboi.png"
           alt="Alessandro Pizzigolotto"
           sizes="sm:15vw md:15vw lg:6vw xl:6vw"
         /> AP

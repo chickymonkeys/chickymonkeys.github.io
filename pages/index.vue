@@ -26,7 +26,7 @@
         class="pizzi-pic"
       >
         <NuxtImg
-          src="/img/pizziboi.png"
+          src="/images/pizziboi.png"
           sizes="sm:23vw md:28vw lg:28vw xl:28vw"
           alt="pizziboi status symbol"
           preload
