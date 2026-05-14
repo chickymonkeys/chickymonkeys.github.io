@@ -1,10 +1,13 @@
 ---
 title: "Learning from a Systemic Banking Crisis' Experience: The Long-Run Impact on Borrowing Behavior"
 coauthors:
-- coauthor: 
-    name:   "Nicolò Fraccaroli"
-    link:   "https://sites.google.com/view/nfraccaroli/home"
-date:       "2020-04-01"
+  - coauthor:
+      name: "Michele Cantarella"
+      link: "https://www.michelecantarella.com/"
+  - coauthor:
+      name: "Nicolò Fraccaroli"
+      link: "https://sites.google.com/view/nfraccaroli/home"
+date: "2026-04-15"
 type: "Work in Progress"
 ---
 
