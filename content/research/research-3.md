@@ -1,23 +1,23 @@
 ---
-title: "Divine Policy: The Impact of Religion in Government"
-title_link: "/files/BPS_Divine_Manuscript.pdf"
+title: 'Divine Policy: The Impact of Religion in Government'
+title_link: '/files/BPS_Divine_Manuscript.pdf'
 links:
-  - label: "Draft"
-    link: "/files/BPS_Divine_Draft.pdf"
-  - label: "Paper Only"
-    link: "/files/BPS_Divine_Manuscript.pdf"
-  - label: "Appendix"
-    link: "/files/BPS_Divine_Appendix.pdf"
+  - label: 'Draft'
+    link: '/files/BPS_Divine_Draft.pdf'
+  - label: 'Paper Only'
+    link: '/files/BPS_Divine_Manuscript.pdf'
+  - label: 'Appendix'
+    link: '/files/BPS_Divine_Appendix.pdf'
 coauthors:
   - coauthor:
-      name: "Jeanet Sinding Bentzen"
-      link: "https://sites.google.com/view/jeanet-sinding-bentzen"
+      name: 'Jeanet Sinding Bentzen'
+      link: 'https://sites.google.com/view/jeanet-sinding-bentzen'
   - coauthor:
-      name: "Lena Lindbjerg Sperling"
-date: "2024-12-25"
-type: "Publications"
+      name: 'Lena Lindbjerg Sperling'
+date: '2024-12-25'
+type: 'Publications'
 infos:
-  - info: "**American Economic Journal: Applied Economics**, Volume 18 (1), January 2026, p. 195-247."
+  - info: '**American Economic Journal: Applied Economics**, Volume 18 (1), January 2026, p. 195-247.'
   - info: '**Press Coverage**: <a href="https://www.aeaweb.org/research/religion-values-government-us">AEA Research Highlights Article</a>.'
 ---
 

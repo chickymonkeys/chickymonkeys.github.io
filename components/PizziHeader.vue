@@ -1,19 +1,13 @@
 <template>
   <div class="header">
-    <div
-      class="row centered disappear"
-      :class="{ secondaryPage: notHomepage }"
-    >
-      <NuxtLink
-        to="/"
-        class="pizzi-smol"
-        aria-label="Go to homepage"
-      >
+    <div class="row centered disappear" :class="{ secondaryPage: notHomepage }">
+      <NuxtLink to="/" class="pizzi-smol" aria-label="Go to homepage">
         <NuxtImg
           src="/images/pizziboi.png"
           alt="Alessandro Pizzigolotto"
           sizes="sm:15vw md:15vw lg:6vw xl:6vw"
-        /> AP
+        />
+        AP
       </NuxtLink>
     </div>
     <div class="row">
@@ -22,36 +16,35 @@
           :class="{ active: $route.path === '/' }"
           to="/"
           aria-label="Go to homepage desktop"
-        >home</NuxtLink>
+        >
+          home
+        </NuxtLink>
         <NuxtLink
           :class="{ active: $route.path === '/research' }"
           to="/research"
           aria-label="Research page"
-        >research
+        >
+          research
         </NuxtLink>
-        <a
-          href="/files/Pizzigolotto_CV.pdf"
-          target="_blank"
-        >cv</a>
+        <a href="/files/Pizzigolotto_CV.pdf" target="_blank"> cv </a>
         <NuxtLink
           :class="{ active: $route.path === '/teaching' }"
           to="/teaching"
           aria-label="Teaching page"
-        >teaching
+        >
+          teaching
         </NuxtLink>
       </nav>
-      <a
-        href="mailto:alpi@econ.ku.dk"
-        class="mail-link"
-        aria-label="Write me an email"
-      >alpi@econ.ku.dk</a>
+      <a href="mailto:alpi@econ.ku.dk" class="mail-link" aria-label="Write me an email">
+        alpi@econ.ku.dk
+      </a>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const route = useRoute()
-const notHomepage = computed(() => route.path !== '/')
+const route = useRoute();
+const notHomepage = computed(() => route.path !== '/');
 </script>
 
 <style lang="scss" scoped>
@@ -79,7 +72,9 @@ const notHomepage = computed(() => route.path !== '/')
     position: relative;
     margin-top: -5.3vw;
     opacity: 0;
-    transition: margin-top 0.3s ease-out, opacity 0.2s 0.1s ease-out;
+    transition:
+      margin-top 0.3s ease-out,
+      opacity 0.2s 0.1s ease-out;
 
     @media all and (max-width: 768px) {
       margin-top: -20vw;
@@ -132,7 +127,6 @@ a:visited {
   }
 
   nav & {
-
     &:hover,
     &.active:first-child {
       color: $primary;
