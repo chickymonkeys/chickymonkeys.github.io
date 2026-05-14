@@ -22,3 +22,14 @@ logs
 .env
 .env.*
 !.env.example
+
+# Claude
+.claude
+
+# Agents
+.agents
+
+# Opencode
+.opencode
+opencode.json
+skills-lock.json

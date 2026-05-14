@@ -2,29 +2,18 @@
   <div>
     <div class="fl-row center standard-padding">
       <div class="text-container">
-        <div
-          ref="title"
-          class="huge-title"
-        >
+        <div ref="title" class="huge-title">
           <span>
             Alessandro
-            <br>Pizzigolotto
+            <br />
+            Pizzigolotto
           </span>
         </div>
-        <div
-          ref="copy"
-          class="copy"
-        >
-          <ContentRenderer
-            v-if="page"
-            :value="page"
-          />
+        <div ref="copy" class="copy">
+          <ContentRenderer v-if="page" :value="page" />
         </div>
       </div>
-      <div
-        ref="image"
-        class="pizzi-pic"
-      >
+      <div ref="image" class="pizzi-pic">
         <NuxtImg
           src="/images/pizziboi.png"
           sizes="sm:23vw md:28vw lg:28vw xl:28vw"
@@ -39,18 +28,18 @@
 </template>
 
 <script setup lang="ts">
-import anime from 'animejs'
+import anime from 'animejs';
 
 const { data: page } = await useAsyncData('index', () => {
-  return queryCollection('content').path('/').first()
-})
+  return queryCollection('content').path('/').first();
+});
 
 useHead({
   title: 'Home',
-})
-const title = useTemplateRef(('title'))
-const copy = useTemplateRef(('copy'))
-const image = useTemplateRef(('image'))
+});
+const title = useTemplateRef('title');
+const copy = useTemplateRef('copy');
+const image = useTemplateRef('image');
 onMounted(() => {
   nextTick(() => {
     requestAnimationFrame(() => {
@@ -61,7 +50,7 @@ onMounted(() => {
         duration: 600,
         delay: 150,
         easing: 'easeOutSine',
-      })
+      });
       anime({
         targets: copy.value,
         translateX: ['-0.5em', 0],
@@ -69,7 +58,7 @@ onMounted(() => {
         duration: 600,
         delay: 300,
         easing: 'easeOutSine',
-      })
+      });
       anime({
         targets: image.value,
         translateX: [40, 0],
@@ -77,52 +66,52 @@ onMounted(() => {
         duration: 600,
         delay: 450,
         easing: 'easeOutSine',
-      })
+      });
       anime({
         targets: document.querySelector('footer'),
         opacity: 1,
         duration: 600,
         delay: 300,
-      })
-    })
-  })
-})
+      });
+    });
+  });
+});
 onBeforeRouteLeave((to, from, next) => {
   anime({
     targets: document.querySelector('footer'),
     opacity: 0,
     duration: 100,
-  })
+  });
 
   anime({
     targets: document.body,
     scrollTop: 0,
     duration: 100,
-  })
+  });
 
   anime({
     targets: title.value,
     translateY: '-0.5em',
     opacity: 0,
     duration: 100,
-  })
+  });
   anime({
     targets: copy.value,
     translateX: '-0.5em',
     opacity: 0,
     duration: 100,
-  })
+  });
   const a = anime({
     targets: image.value,
     translateX: '0.5em',
     opacity: 0,
     duration: 100,
-  })
+  });
 
   a.finished.then(() => {
-    next()
-  })
-})
+    next();
+  });
+});
 </script>
 
 <style lang="scss" scoped>
@@ -141,7 +130,7 @@ onBeforeRouteLeave((to, from, next) => {
   padding: 10vw 0;
   box-sizing: border-box;
 
-  >div {
+  > div {
     align-items: flex-start;
 
     @media all and (max-width: 768px) {

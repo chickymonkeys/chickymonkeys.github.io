@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="container"
-    :class="[currentPage, { loaded }]"
-  >
+  <div class="container" :class="[currentPage, { loaded }]">
     <pizzi-header />
     <div class="inner-container">
       <slot />
@@ -12,19 +9,19 @@
 </template>
 
 <script setup lang="ts">
-const loaded = shallowRef(false)
-const route = useRoute()
-const currentPage = computed(() => route.name)
+const loaded = shallowRef(false);
+const route = useRoute();
+const currentPage = computed(() => route.name);
 
 onMounted(() => {
   nextTick(() => {
     nextTick(() => {
       requestAnimationFrame(() => {
-        loaded.value = true
-      })
-    })
-  })
-})
+        loaded.value = true;
+      });
+    });
+  });
+});
 </script>
 
 <style lang="scss">

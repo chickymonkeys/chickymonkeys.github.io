@@ -1,7 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/sitemap', '@nuxt/content', 'motion-v/nuxt', 'nuxt-gtag', '@nuxt/fonts', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/mdc'],
+  modules: [
+    '@nuxtjs/sitemap',
+    '@nuxt/content',
+    'motion-v/nuxt',
+    'nuxt-gtag',
+    '@nuxt/fonts',
+    '@nuxt/image',
+    '@nuxt/eslint',
+    '@nuxtjs/mdc',
+  ],
   devtools: { enabled: true },
+  compatibilityDate: '2024-11-01',
   app: {
     head: {
       htmlAttrs: {
@@ -13,42 +23,32 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'keywords',
-          content:
-
-            `alessandro pizzigolotto, economics, phd, microeconomics, culture, household finance, political economy, institutions, econometrics`,
+          content: `alessandro pizzigolotto, economics, phd, microeconomics, culture, household finance, political economy, institutions, econometrics`,
         },
         {
           id: 'description',
           name: 'description',
-          content: 'Alessandro Pizzigolotto\'s AcademicWebsite',
+          content: "Alessandro Pizzigolotto's Academic Website",
         },
       ],
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
   /*
-  ** Global CSS
-  */
-  css: [
-    '~/assets/scss/main.scss',
-  ],
-  site: {
-    url: 'https://pizzigolot.to',
-  },
-  compatibilityDate: '2024-11-01',
-  eslint: {
-    config: {
-      stylistic: true,
-    },
-  },
+   ** Global CSS
+   */
+  css: ['~/assets/scss/main.scss'],
   fonts: {
-    families: [{
-      name: 'Playfair Display', weights: [900],
-    }, {
-      name: 'Lato', weights: [300],
-    }],
+    families: [
+      {
+        name: 'Playfair Display',
+        weights: [900],
+      },
+      {
+        name: 'Lato',
+        weights: [300],
+      },
+    ],
     defaults: {
       weights: [400],
     },
@@ -68,4 +68,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'github_pages',
   },
-})
+  site: {
+    url: 'https://pizzigolot.to',
+  },
+});
