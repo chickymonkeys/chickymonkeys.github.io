@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="fl-column aself-start standard-padding">
+    <div class="research-page fl-column aself-start standard-padding">
       <div v-for="([resType, resArr], i) in Object.entries(research!)" :key="resType">
         <PageTitle class="res-page-title" :class="{ first: i === 0 }"> {{ resType }}: </PageTitle>
         <Motion
@@ -27,11 +27,10 @@
                 :key="c.coauthor.name"
                 class="coauthor"
               >
-                <a v-if="c.coauthor.link" :href="c.coauthor.link">
-                  {{ c.coauthor.name }}
-                </a>
-                <span v-else>{{ c.coauthor.name }}</span>
-                {{ getLigature(res.meta.coauthors, index) }}
+                <component :is="c.coauthor.link ? 'a' : 'span'" :href="c.coauthor.link || null">{{
+                  c.coauthor.name
+                }}</component
+                >{{ getLigature(res.meta.coauthors.length, index) }}
               </span>
             </div>
             <div v-if="res.meta.links && res.meta.links.length" ref="links" class="links">
@@ -87,15 +86,14 @@ useHead({
   title: `Research`,
 });
 
-// eslint-disable-next-line
-const getLigature = (a: any, i: number) => {
-  if (a.length === 1) {
+const getLigature = (authorCount: number, i: number) => {
+  if (authorCount === 1) {
     // single co-author case
     return '.';
   } else {
     // more than one co-authors cases
-    if (i < a.length - 2) return ', ';
-    if (i === a.length - 2) return ' and ';
+    if (i < authorCount - 2) return ', ';
+    if (i === authorCount - 2) return ' and ';
     // in any other case
     return '.';
   }
@@ -117,9 +115,12 @@ onMounted(() => {
 <style lang="scss" scoped>
 @import '@/assets/scss/variables';
 
-.standard-padding {
-  padding-right: 18vw;
+@media all and (min-width: 769px) {
+  .research-page {
+    padding-right: 18vw;
+  }
 }
+
 .publication {
   padding: 0 0 1.5vw;
   width: 100%;
