@@ -31,4 +31,5 @@ logs
 
 # Opencode
 .opencode
-.opencode.json
+opencode.json
+skills-lock.json
