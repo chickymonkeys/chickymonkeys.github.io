@@ -2,6 +2,8 @@
 title: 'Credit Shocks and Populism'
 title_link: '/files/FP_CreditPopulism_Manuscript.pdf'
 links:
+  - label: 'SSRN WP'
+    link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6755141'
   - label: 'Draft'
     link: '/files/FP_CreditPopulism_Draft.pdf'
   - label: 'Paper Only'
