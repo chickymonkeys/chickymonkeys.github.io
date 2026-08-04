@@ -15,10 +15,7 @@ jobs:
       - run: corepack enable
       - uses: oven-sh/setup-bun@v2
 
-      # Ensure sharp is added for Linux (IPX needs correct binaries)
-      - run: bun add sharp
-
-      - run: bun install
+      - run: bun ci
       - run: bun run build
         env:
           NITRO_PRESET: github_pages
