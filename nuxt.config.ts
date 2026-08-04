@@ -1,3 +1,5 @@
+import { copyPublicAssets } from 'nitropack/core';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -57,16 +59,16 @@ export default defineNuxtConfig({
     id: 'G-8KX8483ME2',
   },
   image: {
-    provider: 'ipx',
-    format: ['avif', 'webp'],
-    ipx: {
-      modifiers: {
-        format: 'webp',
-      },
-    },
+    provider: 'none',
   },
   nitro: {
     preset: 'github_pages',
+    hooks: {
+      // The static preset copies assets before Nuxt builds the client bundle.
+      async compiled(nitro) {
+        await copyPublicAssets(nitro);
+      },
+    },
   },
   site: {
     url: 'https://pizzigolot.to',
