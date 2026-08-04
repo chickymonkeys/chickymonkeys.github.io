@@ -7,12 +7,22 @@ on:
     branches:
       - main
 
+# Restrict the default GITHUB_TOKEN to read-only source access. The Pages
+# scopes stay on the deploy job so the build job never holds deploy credentials.
+permissions:
+  contents: read
+
+# Serialise Pages deployments. In-progress production deployments are
+# deliberately NOT cancelled, so a running publish always completes.
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: corepack enable
       - uses: oven-sh/setup-bun@v2
 
       - run: bun ci
@@ -45,4 +55,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
