@@ -1,5 +1,5 @@
-import { defineContentConfig, defineCollection } from '@nuxt/content'
-import { z } from 'zod'
+import { defineContentConfig, defineCollection } from '@nuxt/content';
+import { z } from 'zod';
 
 export default defineContentConfig({
   collections: {
@@ -14,22 +14,30 @@ export default defineContentConfig({
         meta: z.object({
           title: z.string(),
           title_link: z.string().optional(),
-          links: z.array(z.object({
-            label: z.string(),
-            link: z.string(),
-          })),
-          coauthors: z.array(z.object({
-            coauthor: z.object({
-              name: z.string(),
-              link: z.string().optional(),
+          links: z.array(
+            z.object({
+              label: z.string(),
+              link: z.string(),
             }),
-          })),
+          ),
+          coauthors: z.array(
+            z.object({
+              coauthor: z.object({
+                name: z.string(),
+                link: z.string().optional(),
+              }),
+            }),
+          ),
           cta: z.string().optional(),
           date: z.string().optional(),
           type: z.string(),
-          infos: z.array(z.object({
-            info: z.string(),
-          })).optional(),
+          infos: z
+            .array(
+              z.object({
+                info: z.string(),
+              }),
+            )
+            .optional(),
         }),
       }),
       source: 'research/*.md',
@@ -49,4 +57,4 @@ export default defineContentConfig({
       source: 'teaching/*.md',
     }),
   },
-})
+});
