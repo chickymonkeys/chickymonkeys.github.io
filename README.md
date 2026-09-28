@@ -85,14 +85,14 @@ workflow is the only publisher — there is no branch whose contents are served
 directly, and the `CNAME` file in the repository root is inert (the custom
 domain `pizzigolot.to` comes from the repository Pages settings).
 
-Branch flow:
+Deployment triggers:
 
 ```
-development  ──PR──▶  main  ──push triggers──▶  deploy workflow  ──▶  pizzigolot.to
+development  ──PR──▶  main  ──push or manual dispatch──▶  deploy workflow  ──▶  pizzigolot.to
 ```
 
 - Work lands on `development`, then reaches `main` through a pull request.
-- Only pushes to `main` trigger a deployment.
+- Pushes to `main` and manual runs of the workflow trigger a deployment.
 - To redeploy without a code change, re-run the workflow rather than committing
   to `main`:
 
