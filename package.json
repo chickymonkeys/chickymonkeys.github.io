@@ -16,20 +16,20 @@
   "dependencies": {
     "@nuxt/eslint": "1.2.0",
     "@nuxt/image": "^2.1.0",
-    "@nuxtjs/mdc": "0.17.2",
+    "@nuxtjs/mdc": "0.22.1",
     "@nuxtjs/sitemap": "^7.6.0",
     "better-sqlite3": "^12.11.1",
     "eslint": "^9.39.5",
     "framer-motion": "^12.43.0",
     "motion-dom": "^12.43.0",
-    "nuxt": "^4.5.1",
+    "nuxt": "^4.6.1",
     "nuxt-gtag": "3.0.2",
-    "sharp": "0.35.3",
-    "vue": "^3.5.40",
+    "sharp": "0.35.5",
+    "vue": "^3.5.42",
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "@nuxt/content": "^3.15.2",
+    "@nuxt/content": "^3.16.2",
     "@nuxt/fonts": "^0.11.4",
     "@types/animejs": "^3.1.13",
     "animejs": "^3.2.2",
@@ -39,6 +39,8 @@
     "sass-embedded": "^1.100.0"
   },
   "overrides": {
-    "sharp": "$sharp"
+    "esbuild": "^0.28.1",
+    "sharp": "$sharp",
+    "tinypool": "^2.1.2"
   }
 }
