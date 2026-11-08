@@ -61,6 +61,11 @@ export default defineNuxtConfig({
   },
   nitro: {
     preset: 'github_pages',
+    prerender: {
+      // The job market map is its own Pages site (chickymonkeys/academic-jobs-dashboard), served beside this one:
+      // the crawler must not follow the header link into it, or the build fails on a 404 for a page Nuxt doesn't have.
+      ignore: ['/academic-jobs-dashboard'],
+    },
   },
   site: {
     url: 'https://pizzigolot.to',

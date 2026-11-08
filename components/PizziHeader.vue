@@ -34,6 +34,8 @@
         >
           teaching
         </NuxtLink>
+        <!-- A separate Pages site (chickymonkeys/academic-jobs-dashboard), so a plain link: NuxtLink would look for a Nuxt page -->
+        <a href="/academic-jobs-dashboard/" aria-label="Academic job market map"> jobs </a>
       </nav>
       <a href="mailto:alpi@econ.ku.dk" class="mail-link" aria-label="Write me an email">
         alpi@econ.ku.dk
