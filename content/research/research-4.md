@@ -13,7 +13,7 @@ coauthors:
   - coauthor:
       name: "Jósef Sigurdsson"
       link: "https://www.josefsigurdsson.com/"
-date: "2026-05-01"
+date: "2026-11-01"
 type: "Work in Progress"
 infos:
   - info: "_New draft available soon!_"
