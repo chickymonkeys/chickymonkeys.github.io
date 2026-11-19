@@ -143,10 +143,9 @@ onBeforeRouteLeave((to, from, next) => {
   }
 }
 
+// Desktop column width comes from the name (global rule), matching the
+// photo, so the gutter between the two columns sits on the page centre.
 .text-container {
-  // Size the column from the copy's measure, not from the title's width.
-  flex: 0 1 auto;
-
   @media all and (max-width: 768px) {
     grid-area: 1 / 1;
     padding-right: 0;
@@ -169,7 +168,8 @@ onBeforeRouteLeave((to, from, next) => {
 
 .portrait {
   flex: 0 0 28vw;
-  align-self: center;
+  // Photo and name share a top line; the intro reads on below the name.
+  align-self: flex-start;
   position: relative;
 
   @media all and (max-width: 768px) {
@@ -177,17 +177,18 @@ onBeforeRouteLeave((to, from, next) => {
   }
 }
 
-// Desktop: the icon row straddles the photo's bottom edge, centred on it.
+// Desktop: the icon row straddles the photo's bottom edge, right-aligned,
+// inset just enough to clear the photo's rounded corner.
 // Mobile: same footer as every other page, at the bottom of the grid.
 .portrait-footer {
   opacity: 0;
 
   @media all and (min-width: 769px) {
     position: absolute;
-    left: 50%;
+    right: max(0.75rem, calc(1.5vw - 0.5rem));
     bottom: 0;
     padding: 0;
-    transform: translate(-50%, 50%);
+    transform: translateY(50%);
   }
 
   @media all and (max-width: 768px) {
@@ -243,7 +244,6 @@ onBeforeRouteLeave((to, from, next) => {
   // House scale (same size as the nav), floored so narrow desktops stay legible.
   font-size: max(1.0625rem, 1.75vw);
   line-height: 1.5;
-  max-width: 24em;
 
   @media all and (max-width: 768px) {
     font-size: max(1.0625rem, 4.5vw);

@@ -160,7 +160,19 @@ footer {
 
   &.overlay .icon svg {
     background-color: $secondary;
-    box-shadow: 0 0 0 0.25rem $secondary;
+    box-shadow: 0 0 0 max(0.25rem, 0.35vw) $secondary;
+  }
+
+  // Overlay row on the homepage photo keeps the original large icons
+  // (4vw, half an icon apart).
+  &.overlay {
+    @media all and (min-width: 769px) {
+      gap: max(0.25rem, calc(2vw - 2 * #{$hit-pad}));
+
+      .icon svg {
+        width: max(1.75rem, 4vw);
+      }
+    }
   }
 
   .hidden-desktop {

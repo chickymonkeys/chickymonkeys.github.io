@@ -178,30 +178,54 @@ onMounted(() => {
   padding-top: 0.5vw;
 }
 
+// Link pills. Desktop: one row, sized from the type scale (14px minimum).
+// Phones: a two-column grid of equal 44px tap targets, so every entry
+// lines up the same way whatever its number of links.
 .links {
   display: flex;
-  flex-direction: row;
-  // Wrap whole pills onto a new row on narrow phones instead of widening the page.
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 20px;
-  gap: 12px;
-  font-size: 14px;
+  gap: 0.75rem;
+  margin-top: max(1.25rem, 1.4vw);
+  font-size: max(0.875rem, 1.1vw);
+
+  @media all and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+  }
 
   .link {
-    padding: 5px 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35em 1em;
     border-radius: 2em;
     background-color: $tertiary;
-    text-align: center;
-    display: inline-block;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     white-space: nowrap;
-    transition: all 0.25s ease-out;
+    transition:
+      background-color 0.25s ease-out,
+      color 0.25s ease-out;
 
-    &:hover {
-      color: $secondary;
-      background-color: $primary;
+    @media all and (max-width: 768px) {
+      min-height: 2.75rem;
+      padding: 0 1em;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $secondary;
+        background-color: $primary;
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primary;
+      outline-offset: 2px;
     }
   }
 }
