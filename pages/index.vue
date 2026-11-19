@@ -24,7 +24,7 @@
             :modifiers="{ format: 'webp' }"
           />
         </div>
-        <PizziFooter class="portrait-footer" />
+        <PizziFooter class="portrait-footer" overlay />
       </div>
     </div>
   </div>
@@ -70,11 +70,14 @@ onMounted(() => {
         delay: 450,
         easing: 'easeOutSine',
       });
+      // Icons sit on the photo's edge: fade them in as the photo settles
+      // (~90% of its slide is done by 900ms).
       anime({
         targets: document.querySelector('footer'),
         opacity: 1,
         duration: 600,
-        delay: 300,
+        delay: 900,
+        easing: 'easeOutSine',
       });
     });
   });
@@ -136,7 +139,7 @@ onBeforeRouteLeave((to, from, next) => {
     display: grid;
     grid-template-rows: auto 1fr;
     padding-top: 0;
-    padding-bottom: 1vw;
+    padding-bottom: 0;
   }
 }
 
@@ -167,27 +170,30 @@ onBeforeRouteLeave((to, from, next) => {
 .portrait {
   flex: 0 0 28vw;
   align-self: center;
+  position: relative;
 
   @media all and (max-width: 768px) {
     display: contents;
   }
 }
 
-// The footer positions itself absolutely on other pages; here it flows
-// below the portrait (desktop) or at the bottom of the grid (mobile).
+// Desktop: the icon row straddles the photo's bottom edge, centred on it.
+// Mobile: same footer as every other page, at the bottom of the grid.
 .portrait-footer {
-  position: static;
-  transform: none;
+  opacity: 0;
 
   @media all and (min-width: 769px) {
-    padding: 1vw 0 0;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    padding: 0;
+    transform: translate(-50%, 50%);
   }
 
   @media all and (max-width: 768px) {
     grid-area: 2 / 1;
     align-self: end;
     justify-self: center;
-    padding-right: 0;
     margin-top: 6vw;
   }
 }

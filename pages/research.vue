@@ -181,6 +181,8 @@ onMounted(() => {
 .links {
   display: flex;
   flex-direction: row;
+  // Wrap whole pills onto a new row on narrow phones instead of widening the page.
+  flex-wrap: wrap;
   align-items: center;
   margin-top: 20px;
   gap: 12px;
@@ -194,6 +196,7 @@ onMounted(() => {
     display: inline-block;
     text-decoration: none;
     font-weight: 600;
+    white-space: nowrap;
     transition: all 0.25s ease-out;
 
     &:hover {

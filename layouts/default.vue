@@ -50,11 +50,10 @@ onMounted(() => {
     flex-direction: column;
     padding-bottom: 0;
     flex-grow: 0;
-    margin: 8vw 0 15vw;
+    margin: 8vw 0 0;
 
     .index & {
       flex-grow: 1;
-      margin-bottom: 4vw;
     }
   }
 }
