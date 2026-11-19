@@ -137,15 +137,6 @@ onMounted(() => {
   }
 }
 
-.container {
-  padding: 10vw 0;
-  box-sizing: border-box;
-
-  > div {
-    align-items: center;
-  }
-}
-
 .title-container {
   margin-bottom: 2vw;
   position: relative;

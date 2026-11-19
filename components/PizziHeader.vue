@@ -12,32 +12,16 @@
     </div>
     <div class="row">
       <nav>
-        <NuxtLink
-          :class="{ active: $route.path === '/' }"
-          to="/"
-          aria-label="Go to homepage desktop"
-        >
-          home
-        </NuxtLink>
-        <NuxtLink
-          :class="{ active: $route.path === '/research' }"
-          to="/research"
-          aria-label="Research page"
-        >
+        <NuxtLink :class="{ active: $route.path === '/' }" to="/"> home </NuxtLink>
+        <NuxtLink :class="{ active: $route.path === '/research' }" to="/research">
           research
         </NuxtLink>
         <a href="/files/Pizzigolotto_CV.pdf" target="_blank"> cv </a>
-        <NuxtLink
-          :class="{ active: $route.path === '/teaching' }"
-          to="/teaching"
-          aria-label="Teaching page"
-        >
+        <NuxtLink :class="{ active: $route.path === '/teaching' }" to="/teaching">
           teaching
         </NuxtLink>
       </nav>
-      <a href="mailto:alpi@econ.ku.dk" class="mail-link" aria-label="Write me an email">
-        alpi@econ.ku.dk
-      </a>
+      <a href="mailto:alpi@econ.ku.dk" class="mail-link"> alpi@econ.ku.dk </a>
     </div>
   </div>
 </template>
@@ -68,13 +52,18 @@ const notHomepage = computed(() => route.path !== '/');
     justify-content: center;
   }
 
+  // Hidden on the homepage. Visibility (not just opacity) keeps the invisible
+  // link out of the Tab order and screen readers; it switches on at once when
+  // the avatar fades in, and off only after it has faded out.
   &.disappear {
     position: relative;
     margin-top: -5.3vw;
     opacity: 0;
+    visibility: hidden;
     transition:
       margin-top 0.3s ease-out,
-      opacity 0.2s 0.1s ease-out;
+      opacity 0.2s 0.1s ease-out,
+      visibility 0s 0.3s;
 
     @media all and (max-width: 768px) {
       margin-top: -20vw;
@@ -83,6 +72,8 @@ const notHomepage = computed(() => route.path !== '/');
     &.secondaryPage {
       margin-top: 0;
       opacity: 1;
+      visibility: visible;
+      transition-delay: 0s, 0.1s, 0s;
     }
   }
 }

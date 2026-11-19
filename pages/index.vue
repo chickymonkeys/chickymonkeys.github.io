@@ -13,13 +13,13 @@
         />
       </div>
       <div class="text-container">
-        <div ref="title" class="huge-title">
+        <h1 ref="title" class="huge-title">
           <span>
             Alessandro
             <br />
             Pizzigolotto
           </span>
-        </div>
+        </h1>
         <div ref="copy" class="copy">
           <ContentRenderer v-if="page" :value="page" />
         </div>
@@ -174,20 +174,6 @@ $top: 4vw;
   }
 }
 
-.container {
-  padding: 10vw 0;
-  box-sizing: border-box;
-
-  > div {
-    align-items: flex-start;
-
-    @media all and (max-width: 768px) {
-      align-items: flex-start;
-      padding-top: 10vw;
-    }
-  }
-}
-
 // Desktop: the icon row straddles the photo's bottom edge, right-aligned,
 // inset just enough to clear the photo's rounded corner.
 // Mobile: same footer as every other page, at the bottom of the grid.
@@ -251,6 +237,12 @@ $top: 4vw;
   position: relative;
   // Floored like the copy, so the gap never drops below one line of text.
   margin-bottom: max(1.5rem, 2.5vw);
+
+  // An h1: drop the browser's default top margin on desktop (phones keep
+  // the global 2vw one).
+  @media all and (min-width: 769px) {
+    margin-top: 0;
+  }
 
   @media all and (max-width: 768px) {
     margin-bottom: 8vw;

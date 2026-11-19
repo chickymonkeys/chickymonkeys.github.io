@@ -81,20 +81,6 @@ onMounted(() => {
   }
 }
 
-.container {
-  padding: 10vw 0;
-  box-sizing: border-box;
-
-  > div {
-    align-items: center;
-  }
-}
-
-.title {
-  margin-bottom: 2vw;
-  position: relative;
-}
-
 .copy {
   padding-right: 10vw;
 }
@@ -107,27 +93,6 @@ strong {
 em {
   display: inline-block;
   margin-right: 0.5em;
-}
-
-.external {
-  background: transparent;
-  border-radius: 4px;
-  color: $plain-text;
-  padding: 1vw 2vw;
-  display: inline-block;
-  border: 2px solid $plain-text;
-  margin-top: 2vw;
-  transition: all 0.3s ease-out;
-
-  &,
-  &:visited {
-    text-decoration: none;
-  }
-
-  &:hover {
-    background-color: $plain-text;
-    color: $secondary;
-  }
 }
 
 .page-title {
