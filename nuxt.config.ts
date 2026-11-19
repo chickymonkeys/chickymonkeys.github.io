@@ -37,7 +37,7 @@ export default defineNuxtConfig({
   /*
    ** Global CSS
    */
-  css: ['~/assets/scss/main.scss'],
+  css: ['normalize.css', '~/assets/scss/main.scss'],
   fonts: {
     families: [
       {

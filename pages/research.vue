@@ -113,7 +113,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/variables';
+@use '@/assets/scss/variables' as *;
 
 @media all and (min-width: 769px) {
   .research-page {

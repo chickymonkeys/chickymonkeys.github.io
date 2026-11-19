@@ -68,7 +68,7 @@
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/variables';
+@use '@/assets/scss/variables' as *;
 
 footer {
   display: flex;
@@ -83,13 +83,6 @@ footer {
   @media all and (min-width: 769px) {
     position: static;
     transition: none;
-  }
-
-  .index & {
-    @media all and (min-width: 769px) {
-      transform: translate3d(56vw, 52vw, 0);
-      position: absolute;
-    }
   }
 
   @media all and (max-width: 768px) {

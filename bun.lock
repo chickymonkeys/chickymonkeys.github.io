@@ -25,7 +25,7 @@
         "@types/animejs": "^3.1.13",
         "animejs": "^3.2.2",
         "motion-v": "^1.10.3",
-        "normalize-scss": "^8.0.0",
+        "normalize.css": "^8.0.1",
         "oxfmt": "^0.49.0",
         "sass-embedded": "^1.100.0",
       },
@@ -299,11 +299,11 @@
 
     "@nuxt/devalue": ["@nuxt/devalue@2.0.2", "", {}, "sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA=="],
 
-    "@nuxt/devtools": ["@nuxt/devtools@3.4.3", "", { "dependencies": { "@nuxt/devtools-kit": "3.4.3", "@nuxt/devtools-wizard": "3.4.3", "@nuxt/kit": "^4.5.1", "@vue/devtools-core": "^8.2.1", "@vue/devtools-kit": "^8.2.1", "birpc": "^4.0.0", "consola": "^3.4.2", "destr": "^2.0.5", "error-stack-parser-es": "^2.0.1", "execa": "^8.0.1", "fast-npm-meta": "^2.2.0", "get-port-please": "^3.2.0", "hookable": "^6.1.1", "image-meta": "^0.2.2", "is-installed-globally": "^1.0.0", "launch-editor": "^2.14.1", "local-pkg": "^1.2.1", "magicast": "^0.5.4", "ohash": "^2.0.11", "package-manager-detector": "^1.8.0", "pathe": "^2.0.3", "perfect-debounce": "^2.1.0", "pkg-types": "^2.3.1", "semver": "^7.8.5", "sirv": "^3.0.2", "structured-clone-es": "^2.0.1", "tinyexec": "^1.3.0", "tinyglobby": "^0.2.17", "unstorage": "^1.17.5", "vite-plugin-inspect": "^11.4.1", "vite-plugin-vue-tracer": "^1.4.0", "which": "^6.0.1", "ws": "^8.21.1" }, "peerDependencies": { "@vitejs/devtools": "*", "vite": ">=6.0" }, "optionalPeers": ["@vitejs/devtools"], "bin": { "devtools": "./cli.mjs" } }, "sha512-63qNER1zq1z+b+zUms2X9xKu8SV04FSab8C7yqzCy/8C/mPodNVJZsI6YsCXhz2BLAM1E9+3vIPzLT8BJjKKmA=="],
+    "@nuxt/devtools": ["@nuxt/devtools@3.4.4", "", { "dependencies": { "@nuxt/devtools-kit": "3.4.4", "@nuxt/devtools-wizard": "3.4.4", "@nuxt/kit": "^4.6.1", "@vue/devtools-core": "^8.2.1", "@vue/devtools-kit": "^8.2.1", "birpc": "^4.2.0", "consola": "^3.4.2", "destr": "^2.0.5", "error-stack-parser-es": "^2.0.1", "execa": "^8.0.1", "fast-npm-meta": "^2.2.0", "get-port-please": "^3.2.0", "hookable": "^6.1.2", "image-meta": "^0.3.0", "is-installed-globally": "^1.0.1", "launch-editor": "^2.14.2", "local-pkg": "^1.2.1", "magicast": "^0.5.5", "ohash": "^2.0.12", "package-manager-detector": "^1.9.0", "pathe": "^2.0.3", "perfect-debounce": "^2.1.0", "pkg-types": "^2.3.3", "semver": "^7.8.5", "sirv": "^3.0.2", "structured-clone-es": "^2.0.1", "tinyexec": "^1.3.1", "tinyglobby": "^0.2.17", "unstorage": "^1.17.5", "vite-plugin-inspect": "^11.4.1", "vite-plugin-vue-tracer": "^1.5.0", "which": "^6.0.1", "ws": "^8.22.0" }, "peerDependencies": { "@vitejs/devtools": "*", "vite": ">=6.0" }, "optionalPeers": ["@vitejs/devtools"], "bin": { "devtools": "./cli.mjs" } }, "sha512-cPwBW+odVCCid6pllN3f93L0hyOCYRXrEZLmCiV2IgBoQ3lskhuu304JDJjv/VvtWB+OVWfHQ38aowX28WybXQ=="],
 
     "@nuxt/devtools-kit": ["@nuxt/devtools-kit@2.7.0", "", { "dependencies": { "@nuxt/kit": "^3.19.3", "execa": "^8.0.1" }, "peerDependencies": { "vite": ">=6.0" } }, "sha512-MIJdah6CF6YOW2GhfKnb8Sivu6HpcQheqdjOlZqShBr+1DyjtKQbAKSCAyKPaoIzZP4QOo2SmTFV6aN8jBeEIQ=="],
 
-    "@nuxt/devtools-wizard": ["@nuxt/devtools-wizard@3.4.3", "", { "dependencies": { "@clack/prompts": "^1.7.0", "consola": "^3.4.2", "diff": "^8.0.4", "execa": "^8.0.1", "magicast": "^0.5.4", "pathe": "^2.0.3", "pkg-types": "^2.3.1", "semver": "^7.8.5" }, "bin": { "devtools-wizard": "./cli.mjs" } }, "sha512-0F5mQmaj3rEMT5gkQeDsXea7YyyvPwp4ktT3xduZgp1G0QiSzV7AQ64gXz2LPaIc4V8ib/k++8KjmHL+/DbH4Q=="],
+    "@nuxt/devtools-wizard": ["@nuxt/devtools-wizard@3.4.4", "", { "dependencies": { "@clack/prompts": "^1.8.1", "consola": "^3.4.2", "diff": "^9.0.0", "execa": "^8.0.1", "magicast": "^0.5.5", "pathe": "^2.0.3", "pkg-types": "^2.3.3", "semver": "^7.8.5" }, "bin": { "devtools-wizard": "./cli.mjs" } }, "sha512-iGL6p2ZM926pfV0UUsnaseNGNEp/PWbX5f1zFqRgVxiDOEVsrBOfFA5sLgfuO2NWi3+3/84fy7ungcCP6zGYvA=="],
 
     "@nuxt/eslint": ["@nuxt/eslint@1.2.0", "", { "dependencies": { "@eslint/config-inspector": "^1.0.2", "@nuxt/devtools-kit": "^2.2.1", "@nuxt/eslint-config": "1.2.0", "@nuxt/eslint-plugin": "1.2.0", "@nuxt/kit": "^3.16.0", "chokidar": "^4.0.3", "eslint-flat-config-utils": "^2.0.1", "eslint-typegen": "^2.0.0", "find-up": "^7.0.0", "get-port-please": "^3.1.2", "mlly": "^1.7.4", "pathe": "^2.0.3", "unimport": "^4.1.2" }, "peerDependencies": { "eslint": "^9.0.0", "eslint-webpack-plugin": "^4.1.0", "vite-plugin-eslint2": "^5.0.0" }, "optionalPeers": ["eslint-webpack-plugin", "vite-plugin-eslint2"] }, "sha512-5hvlB0ZQMnIaXtgWH9V1xzub2YurFFJ66yMtQcy42sxwaEGUxJ+fYLDjfHbZKxTX0VE/CuNG7A57kEtrM9diPg=="],
 
@@ -987,7 +987,7 @@
 
     "dfa": ["dfa@1.2.0", "", {}, "sha512-ED3jP8saaweFTjeGX8HQPjeC1YYyZs98jGNZx6IiBvxW7JG5v492kamAQB3m2wop07CvU/RQmzcKr6bgcC5D/Q=="],
 
-    "diff": ["diff@8.0.4", "", {}, "sha512-DPi0FmjiSU5EvQV0++GFDOJ9ASQUVFh5kD+OzOnYdi7n3Wpm9hWWGfB/O2blfHcMVTL5WkQXSnRiK9makhrcnw=="],
+    "diff": ["diff@9.0.0", "", {}, "sha512-svtcdpS8CgJyqAjEQIXdb3OjhFVVYjzGAPO8WGCmRbrml64SPw/jJD4GoE98aR7r25A0XcgrK3F02yw9R/vhQw=="],
 
     "diff3": ["diff3@0.0.3", "", {}, "sha512-iSq8ngPOt0K53A6eVr4d5Kn6GNrM2nQZtC740pzIriHtn4pOQ2lyzEXQMBeVcWERN0ye7fhBsk9PbLLQOnUx/g=="],
 
@@ -1623,7 +1623,7 @@
 
     "normalize-path": ["normalize-path@3.0.0", "", {}, "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA=="],
 
-    "normalize-scss": ["normalize-scss@8.0.0", "", {}, "sha512-C6GXIxQ2LOYWrde27xWbONavmybobxp+V6TY8BiBJw5M+yMNEg2R0WjaeDtmP5JsunFYKvFOvgMAIC0/OxZuJQ=="],
+    "normalize.css": ["normalize.css@8.0.1", "", {}, "sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg=="],
 
     "nostics": ["nostics@1.3.0", "", {}, "sha512-wzRsrJwNlFbqIRQt8aCeL2WE8USip/uuvGSOZV1D02CxX8ABTMbw8IywKjH7yWHETMXbWJI4OBpihg9rmz2Vyg=="],
 
@@ -2323,9 +2323,11 @@
 
     "@nuxt/content/@nuxtjs/mdc": ["@nuxtjs/mdc@0.23.2", "", { "dependencies": { "@nuxt/kit": "^4.5.2", "@shikijs/core": "^4.5.0", "@shikijs/engine-javascript": "^4.5.0", "@shikijs/langs": "^4.5.0", "@shikijs/themes": "^4.5.0", "@shikijs/transformers": "^4.5.0", "@types/hast": "^3.0.5", "@types/mdast": "^4.0.4", "@vue/compiler-core": "^3.5.43", "consola": "^3.4.2", "debug": "^4.4.3", "defu": "^6.1.7", "destr": "^2.0.5", "detab": "^3.0.2", "github-slugger": "^2.0.0", "hast-util-format": "^1.1.0", "hast-util-to-mdast": "^10.1.2", "hast-util-to-string": "^3.0.1", "mdast-util-to-hast": "^13.2.1", "micromark-util-sanitize-uri": "^2.0.1", "parse5": "^8.0.1", "pathe": "^2.0.3", "property-information": "^7.2.0", "rehype-external-links": "^3.0.0", "rehype-minify-whitespace": "^6.0.2", "rehype-raw": "^7.0.0", "rehype-remark": "^10.0.1", "rehype-slug": "^6.0.0", "rehype-sort-attribute-values": "^5.0.1", "rehype-sort-attributes": "^5.0.1", "remark-emoji": "^5.0.2", "remark-gfm": "^4.0.1", "remark-mdc": "^3.11.1", "remark-parse": "^11.0.0", "remark-rehype": "^11.1.2", "remark-stringify": "^11.0.0", "scule": "^1.3.0", "shiki": "^4.5.0", "ufo": "^1.6.4", "unified": "^11.0.5", "unist-builder": "^4.0.0", "unist-util-visit": "^5.1.0", "unwasm": "^0.5.3", "vfile": "^6.0.3" } }, "sha512-oM6wCKROrLg0g4qLG/cg/M9yMFLsqJxWH1tIjpf4L9uxzJ2twhRxVgKWXaiBNF/W0BoNkJ/kr1qpAJBj6fQSog=="],
 
-    "@nuxt/devtools/@nuxt/devtools-kit": ["@nuxt/devtools-kit@3.4.3", "", { "dependencies": { "@nuxt/kit": "^4.5.1", "execa": "^8.0.1" }, "peerDependencies": { "vite": ">=6.0" } }, "sha512-mG4OT+1v6JkaRj+L9bYI6TaWLqDwu4NE+//UL/annLsrGiAOXc9FlFAnIIuQojPZ+H1gJeuc1pc968z/jXwUlA=="],
+    "@nuxt/devtools/@nuxt/devtools-kit": ["@nuxt/devtools-kit@3.4.4", "", { "dependencies": { "@nuxt/kit": "^4.6.1", "execa": "^8.0.1" }, "peerDependencies": { "vite": ">=6.0" } }, "sha512-q3aRKpnriK/kITYlYUXSE3O0R7WeJwSMLvtbo1HfcKXYg/q8688iIb5VURl0fbkSaFTk7ndU5HIbW+5f0JOJPQ=="],
 
     "@nuxt/devtools/hookable": ["hookable@6.1.2", "", {}, "sha512-+abwxtiEA52GCVIsQqut3S/uKTbUwYIp4Pe/vv+6py5XiXBCqMZHg6pA6Y5qhgLSEys0/cYuPbO0z1QFj5ZCmg=="],
+
+    "@nuxt/devtools/image-meta": ["image-meta@0.3.1", "", {}, "sha512-rKANCbmsJCZ3/q87GTWZ+8MhOvhPLjsScznVtqvBoTu6Tyq8FzdPoBUMl/ZxQXy+/5I+C1vxXwS1jSwmHgmDLQ=="],
 
     "@nuxt/devtools/which": ["which@6.0.1", "", { "dependencies": { "isexe": "^4.0.0" }, "bin": { "node-which": "bin/which.js" } }, "sha512-oGLe46MIrCRqX7ytPUf66EAYvdeMIZYn3WaocqqKZAxrBpkqHfL/qvTyJ/bTk5+AqHCjXmrv3CEWgy368zhRUg=="],
 

@@ -48,7 +48,7 @@ const notHomepage = computed(() => route.path !== '/');
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/variables';
+@use '@/assets/scss/variables' as *;
 
 .mail-link {
   @media all and (max-width: 768px) {

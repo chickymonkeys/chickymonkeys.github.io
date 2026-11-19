@@ -8,4 +8,6 @@ Welcome to my website! I am an applied economist and currently a Postdoctoral Sc
 
 I received my PhD in Economics from the [Norwegian School of Economics (NHH)](https://www.nhh.no/en/departments/economics/) and [FAIR-CELE](https://www.nhh.no/en/research-centres/fair/research/projects/labour-economics/).
 
+I am on the **2026-27 academic job market**.
+
 My research focuses on the use of micro-econometric tools and data science techniques to investigate on topics in political economy and its intersection with relevant disciplines such as religion, economic history, and finance.

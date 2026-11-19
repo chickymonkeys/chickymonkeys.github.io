@@ -4,7 +4,7 @@
     <div class="inner-container">
       <slot />
     </div>
-    <pizzi-footer />
+    <pizzi-footer v-if="currentPage !== 'index'" />
   </div>
 </template>
 
@@ -25,7 +25,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-@import '@/assets/scss/variables';
+@use '@/assets/scss/variables' as *;
 
 .container {
   background-color: $secondary;
@@ -53,6 +53,7 @@ onMounted(() => {
     margin: 8vw 0 15vw;
 
     .index & {
+      flex-grow: 1;
       margin-bottom: 4vw;
     }
   }
