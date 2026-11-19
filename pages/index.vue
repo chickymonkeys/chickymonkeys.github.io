@@ -141,12 +141,12 @@ onBeforeRouteLeave((to, from, next) => {
 }
 
 .text-container {
-  @media all and (width > 768px) {
-    flex-basis: min(45vw, 34rem);
-  }
+  // Size the column from the copy's measure, not from the title's width.
+  flex: 0 1 auto;
 
   @media all and (max-width: 768px) {
     grid-area: 1 / 1;
+    padding-right: 0;
   }
 }
 
@@ -167,30 +167,28 @@ onBeforeRouteLeave((to, from, next) => {
 .portrait {
   flex: 0 0 28vw;
   align-self: center;
-  position: relative;
 
   @media all and (max-width: 768px) {
     display: contents;
   }
 }
 
+// The footer positions itself absolutely on other pages; here it flows
+// below the portrait (desktop) or at the bottom of the grid (mobile).
 .portrait-footer {
-  @media all and (max-width: 768px) {
-    position: relative;
-    bottom: auto;
-    left: 42vw; // Center against the viewport from the row's 8vw left inset.
-    grid-area: 2 / 1;
-    align-self: end;
-    justify-self: start;
-    margin-block-start: 6vw;
+  position: static;
+  transform: none;
+
+  @media all and (min-width: 769px) {
+    padding: 1vw 0 0;
   }
 
-  @media all and (width > 768px) {
-    position: absolute;
-    right: 0.3vw;
-    bottom: 0;
-    padding: 0;
-    transform: translateY(50%);
+  @media all and (max-width: 768px) {
+    grid-area: 2 / 1;
+    align-self: end;
+    justify-self: center;
+    padding-right: 0;
+    margin-top: 6vw;
   }
 }
 
@@ -204,7 +202,6 @@ onBeforeRouteLeave((to, from, next) => {
     grid-area: 1 / 1;
     align-self: start;
     justify-self: end;
-    margin-right: 4vw;
     width: 23.5vw;
     height: 23.5vw;
   }
@@ -225,23 +222,33 @@ onBeforeRouteLeave((to, from, next) => {
   transform: translateY(-0.5em);
   opacity: 0;
   position: relative;
-  margin-bottom: clamp(1.75rem, 5vw, 2.5rem);
+  // Floored like the copy, so the gap never drops below one line of text.
+  margin-bottom: max(1.5rem, 2.5vw);
+
+  @media all and (max-width: 768px) {
+    margin-bottom: 8vw;
+  }
 }
 
 .copy {
   transform: translateY(-0.5em);
   opacity: 0;
   position: relative;
-  max-inline-size: 58ch;
-  font-size: clamp(1.0625rem, 0.9rem + 0.4vw, 1.25rem);
-  line-height: 1.55;
+  // House scale (same size as the nav), floored so narrow desktops stay legible.
+  font-size: max(1.0625rem, 1.75vw);
+  line-height: 1.5;
+  max-width: 24em;
+
+  @media all and (max-width: 768px) {
+    font-size: max(1.0625rem, 4.5vw);
+  }
 
   :deep(p) {
     margin: 0;
   }
 
   :deep(p + p) {
-    margin-block-start: 1em;
+    margin-top: 1em;
   }
 
   :deep(strong) {

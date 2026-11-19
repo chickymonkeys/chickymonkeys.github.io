@@ -46,7 +46,7 @@ export default defineNuxtConfig({
       },
       {
         name: 'Lato',
-        weights: [300],
+        weights: [300, 700],
       },
     ],
     defaults: {

@@ -62,7 +62,9 @@ body {
   padding: 0 25vw 3vw 4vw;
 
   .index & {
-    padding-right: 4vw;
+    @media all and (min-width: 769px) {
+      padding-right: 4vw;
+    }
   }
 
   @media all and (max-width: 768px) {
